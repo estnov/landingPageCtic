@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "landingPage": {
+    "paginaCTIC": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/landing-page",
+            "outputPath": "dist/pagina-ctic",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "landingPage:build:production"
+              "browserTarget": "paginaCTIC:build:production"
             },
             "development": {
-              "browserTarget": "landingPage:build:development"
+              "browserTarget": "paginaCTIC:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "landingPage:build"
+            "browserTarget": "paginaCTIC:build"
           }
         },
         "test": {
