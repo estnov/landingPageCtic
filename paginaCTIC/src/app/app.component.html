@@ -5,14 +5,29 @@
 </header>
 <body>
   <br>
-  <h1>
-    Centro Temporal de <br>
-    Implataciones y Competencias
-  </h1>
   <div class='slider'>
     <img src="../assets/images/panda1.jpeg" />
     <img src="../assets/images/panda2.jpeg" />
     <img src="../assets/images/panda3.jpeg" />
   </div>
   <br>
+
+  <mat-grid-list cols="2" rowHeight="1.5:1">
+    <mat-grid-tile>
+      <img src="../assets/images/electricidad.jpeg" />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <h3>MISIÓN</h3>
+      Somos una empresa que brinda los servicios de energía eléctrica y alumbrado público general a la sociedad, con innovación tecnológica, 
+        altos estándares de calidad; social y ambientalmente responsable, gracias a su equipo de trabajo honesto y comprometido.
+      
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="2" rowHeight="1.5:1">
+      <mat-grid-tile><h3>VISIÓN</h3>
+        <p>Al 2025, ser una empresa reconocida en Latinoamérica por la excelencia en la prestación de servicios de energía eléctrica y alumbrado
+          público general y la satisfacción del usuario, que contribuye al desarrollo de la sociedad.</p>
+      </mat-grid-tile>
+      <mat-grid-tile><img src="../assets/images/empresa.jpg" /></mat-grid-tile>
+  </mat-grid-list>
 <router-outlet></router-outlet>
