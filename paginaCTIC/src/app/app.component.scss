@@ -49,11 +49,14 @@ body h5 {
     width: 100%;
     height: 100vh;
     overflow-x: scroll;
-    
+    transition-property: left;
+    transition-duration: 2s;
 }
 
 .slider img {
     flex: 0 0 100%;
     width: 100%;
     object-fit: cover;
+    transition-property: left;
+    transition-duration: 2s;
 }
