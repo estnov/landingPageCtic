@@ -38,7 +38,6 @@ export class FirebaseService {
 
   getImagenesHeader(){
     const storageRef = this.storage.ref('Imagenes/Header'); 
-    this.imageUrls = [];
     storageRef.listAll().subscribe(listResult => {
       listResult.items.forEach(itemRef => {
         itemRef.getDownloadURL().then(imageUrl => {
@@ -46,15 +45,10 @@ export class FirebaseService {
         });
       });
     });
-    if(this.imageUrls.length == 0){
-      alert("No se encontraron imagenes en el storage");
-    } else{
-      alert("Se encontraron imagenes en el storage");
-    }
 
     return this.imageUrls;
   }
-
+/*
   getImagenesEquipo(){
     const storageRef = this.storage.ref('Imagenes/Equipos'); 
     storageRef.listAll().subscribe(listResult => {
@@ -65,5 +59,5 @@ export class FirebaseService {
       });
     });
     return this.imageUrls;
-  }
+  }*/
 }

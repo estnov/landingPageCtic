@@ -22,7 +22,8 @@ export class AppComponent {
         this.mision = "Actualice la mision en la BD de Firebase";
       }
     });
-    console.log(fire.getImagenesHeader())
+    this.images=[]
+    //console.log(fire.getImagenesHeader())
     this.images.push(fire.getImagenesHeader())
     console.log("------>",this.images)
   }
