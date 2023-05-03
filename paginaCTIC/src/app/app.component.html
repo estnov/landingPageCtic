@@ -5,16 +5,14 @@
 </header>
 <body>
   <br>
-  <div class='slider'>
-    <img src="../assets/images/panda1.jpeg" />
-    <img src="../assets/images/panda2.jpeg" />
-    <img src="../assets/images/panda3.jpeg" />
+  <div class='slider' *ngFor="let imagen of images">
+    <img src= "{{imagen}}"/>
   </div>
   <br>
 
   <mat-grid-list cols="2" rowHeight="1.5:1">
     <mat-grid-tile>
-      <img src="../assets/images/electricidad.jpeg" />
+      <img src="https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FHeader%2Fimage_2023-05-03_144833806.png?alt=media&token=81c9da56-3113-4c58-84ab-fd9fc01c8a84" />
     </mat-grid-tile>
     <mat-grid-tile>
       <h3>MISIÓN</h3>

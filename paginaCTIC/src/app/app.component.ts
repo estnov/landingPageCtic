@@ -8,6 +8,7 @@ import { FirebaseService } from './services/firebase.service';
 })
 export class AppComponent {
   title = 'paginaCTIC';
+  images:Array<any>=[]
 
   public mision: string ='';
 
@@ -22,6 +23,8 @@ export class AppComponent {
       }
     });
     console.log(fire.getImagenesHeader())
+    this.images.push(fire.getImagenesHeader())
+    console.log("------>",this.images)
   }
 
   imageObject: Array<object> = [{
