@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirebaseService } from './services/firebase.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'paginaCTIC';
+
+  public mision: string ='';
+
+
+  constructor(private fire : FirebaseService) { 
+    fire.getMision().subscribe(mision => {
+      if (mision.length > 0) {
+        this.mision = mision[0].descripcion;
+        console.log('Mision: ', this.mision);
+      } else {
+        this.mision = "Actualice la mision en la BD de Firebase";
+      }
+    });
+  }
 
   imageObject: Array<object> = [{
     image: 'assets/images/empresa.jpg',
