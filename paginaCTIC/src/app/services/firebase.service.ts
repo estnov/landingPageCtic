@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Observable, map } from 'rxjs';
 
 @Injectable({
@@ -13,7 +14,9 @@ export class FirebaseService {
   private visionCollection: AngularFirestoreCollection<any>;
   vision$: Observable<any[]>;
 
-  constructor(private afs: AngularFirestore) {
+  imageUrls: string[] = [];
+
+  constructor(private afs: AngularFirestore, private storage: AngularFireStorage) {
     this.misionCollection = afs.collection<any>('mision');
     this.mision$ = this.misionCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => a.payload.doc.data()))
@@ -31,5 +34,17 @@ export class FirebaseService {
 
   getVision(): Observable<any[]> {
     return this.vision$;
+  }
+
+  getImagenesHeader(){
+    const storageRef = this.storage.ref('Imagenes/Header'); 
+    storageRef.listAll().subscribe(listResult => {
+      listResult.items.forEach(itemRef => {
+        itemRef.getDownloadURL().then(imageUrl => {
+          this.imageUrls.push(imageUrl);
+        });
+      });
+    });
+    return this.imageUrls;
   }
 }
