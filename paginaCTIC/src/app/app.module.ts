@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     AppRoutingModule,
     NgImageSliderModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
