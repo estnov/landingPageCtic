@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,11 @@ export class AppComponent {
   images:Array<any>=[]
 
   public mision: string ='';
+  public visiones: string ='';
+  imageUrls: string[] = [];
 
 
-  constructor(private fire : FirebaseService) { 
+  constructor(private fire : FirebaseService, private storage: AngularFireStorage) { 
     fire.getMision().subscribe(mision => {
       if (mision.length > 0) {
         this.mision = mision[0].descripcion;
@@ -22,11 +25,47 @@ export class AppComponent {
         this.mision = "Actualice la mision en la BD de Firebase";
       }
     });
-    this.images=[]
-    //console.log(fire.getImagenesHeader())
-    this.images.push(fire.getImagenesHeader())
-    console.log("------>",this.images)
+
+    fire.getVision().subscribe(vision => {
+      if (vision.length > 0) {
+        this.visiones = vision[0].descripcion;
+      } else {
+        this.visiones = " Registrar este campo en la Base de Datos ";
+      }
+    });
+    this.getImagenesHeader()
+ }
+
+  /*getVisionFire(){
+    this.fire.getVision().subscribe(vision => {
+      if (vision.length > 0) {
+        this.visiones = vision[0].descripcion;
+      } else {
+        this.visiones = " Registrar este campo en la Base de Datos ";
+      }
+    });
+  }*/
+
+  getImagenesHeader(){
+    const storageRef = this.storage.ref('Imagenes/Header'); 
+    storageRef.listAll().subscribe(listResult => {
+      listResult.items.forEach(itemRef => {
+        itemRef.getDownloadURL().then(imageUrl => {
+          this.imageUrls.push(imageUrl);
+        });
+      });
+    });
+
+    return this.imageUrls;
   }
+
+  slideConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 200,
+  };
 
   imageObject: Array<object> = [{
     image: 'assets/images/empresa.jpg',

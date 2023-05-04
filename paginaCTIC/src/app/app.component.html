@@ -5,9 +5,17 @@
 </header>
 <body>
   <br>
-  <div class='slider' *ngFor="let imagen of images">
-    <img src= "{{imagen}}"/>
+  <div class="slider">
+    <ngx-slick-carousel class="carrusel" [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let imagen of imageUrls">
+        <img [src]="imagen" alt="" />
+      </div>
+    </ngx-slick-carousel>
   </div>
+  <!--<div class='slider' *ngFor="let imagen of imageUrls">
+    <img src="{{imagen}}"/>
+    <img [src]="imagen" />
+  </div>-->
   <br>
 
   <mat-grid-list cols="2" rowHeight="1.5:1">
@@ -22,8 +30,7 @@
   </mat-grid-list>
   <mat-grid-list cols="2" rowHeight="1.5:1">
       <mat-grid-tile><h3>VISIÓN</h3>
-        <p>Al 2025, ser una empresa reconocida en Latinoamérica por la excelencia en la prestación de servicios de energía eléctrica y alumbrado
-          público general y la satisfacción del usuario, que contribuye al desarrollo de la sociedad.</p>
+        {{visiones}}
       </mat-grid-tile>
       <mat-grid-tile><img src="../assets/images/empresa.jpg" /></mat-grid-tile>
   </mat-grid-list>
