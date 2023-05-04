@@ -52,14 +52,15 @@ body h5 {
     overflow-y: scroll;
     transition-property: left;
     transition-duration: 2s;
-  }
+  }*/
 
 .carrusel img {
   display: flex;
   overflow-x: scroll;
   flex: 0 0 100%;
   width: 100%;
-}*/
+  height: auto;
+}
 
 
 mat-grid-tile img{
@@ -68,111 +69,3 @@ mat-grid-tile img{
   height: 100%;
 }
 
-.slider {
-  width: 100%;
-  overflow: hidden;
-}
-
-.carrusel {
-  position: initial;
-  display: flex;
-  overflow-x: auto;
-  flex: 0 0 100%;
-  width: 100%;
-}
-
-.slick-slider {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  touch-action: pan-y;
-  overflow: hidden;
-  height: 300px;
-}
-
-.slick-list {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  transition: transform 2s ease-in-out;
-}
-
-.slick-track {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.slick-slide {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: 0 10px;
-  position: relative;
-}
-
-.slick-slide img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: cover;
-  display: flex;
-}
-
-.slick-arrow {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  display: block;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  background: transparent;
-  border: none;
-  transform: translateY(-50%);
-  cursor: pointer;
-  display: flex;
-}
-
-.slick-prev {
-  left: 10px;
-}
-
-.slick-next {
-  right: 10px;
-}
-
-.slick-arrow:before {
-  font-family: 'slick';
-  font-size: 20px;
-  line-height: 1;
-  color: #666;
-  opacity: 0.75;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  content: '';
-  display: inline-block;
-  font-size: 0;
-  line-height: 0;
-  vertical-align: top;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.slick-prev:before {
-  content: '←';
-}
-
-.slick-next:before {
-  content: '→';
-}
-
-.slick-disabled:before {
-  opacity: 0.25;
-  cursor: default;
-}
