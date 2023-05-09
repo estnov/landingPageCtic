@@ -36,7 +36,7 @@ export class FirebaseService {
     return this.vision$;
   }
 
-  getImagenesHeader(){
+  /*getImagenesHeader(){
     const storageRef = this.storage.ref('Imagenes/Header'); 
     storageRef.listAll().subscribe(listResult => {
       listResult.items.forEach(itemRef => {
@@ -47,7 +47,7 @@ export class FirebaseService {
     });
 
     return this.imageUrls;
-  }
+  }*/
 /*
   getImagenesEquipo(){
     const storageRef = this.storage.ref('Imagenes/Equipos'); 
