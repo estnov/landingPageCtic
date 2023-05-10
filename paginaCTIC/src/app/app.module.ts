@@ -9,10 +9,20 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CticComponent } from './Components/ctic/ctic.component';
+import { ServiciosComponent } from './Components/servicios/servicios.component';
+import { BlogComponent } from './Components/blog/blog.component';
+import { ContactanosComponent } from './Components/contactanos/contactanos.component';
+import { InicioComponent } from './Components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CticComponent,
+    ServiciosComponent,
+    BlogComponent,
+    ContactanosComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
