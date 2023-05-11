@@ -25,22 +25,29 @@
   
   <br>
 
-  <mat-grid-list cols="2" rowHeight="1.5:1">
+  <mat-grid-list cols="2" rowHeight="400px" gutterSize="35px">
     <mat-grid-tile>
       <img src="https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FHeader%2Fimage_2023-05-03_144833806.png?alt=media&token=81c9da56-3113-4c58-84ab-fd9fc01c8a84" />
     </mat-grid-tile>
     <mat-grid-tile>
-      <h3>MISIÓN</h3>
-      {{mision}}
-      
+      <mat-card>
+        <mat-card-title>MISIÓN</mat-card-title>
+        <mat-card-content>
+           {{mision}}
+        </mat-card-content>
+      </mat-card>
     </mat-grid-tile>
-  </mat-grid-list>
-  <mat-grid-list cols="2" rowHeight="1.5:1">
-      <mat-grid-tile><h3>VISIÓN</h3>
-        {{visiones}}
+  
+      <mat-grid-tile>
+        <mat-card >
+          <mat-card-title>VISIÓN</mat-card-title>
+          <mat-card-content>
+             {{visiones}}
+          </mat-card-content>
+        </mat-card>
       </mat-grid-tile>
       <mat-grid-tile><img src="../assets/images/empresa.jpg" /></mat-grid-tile>
-  </mat-grid-list>
+    </mat-grid-list>
 
 </body>
 <router-outlet></router-outlet>

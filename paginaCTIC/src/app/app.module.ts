@@ -9,6 +9,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { MatCardModule } from  '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MatGridListModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
