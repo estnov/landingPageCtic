@@ -64,7 +64,7 @@ export class AppComponent {
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 20,
+    autoplaySpeed: 5000,
   };
 
   imageObject: Array<object> = [{

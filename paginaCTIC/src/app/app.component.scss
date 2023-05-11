@@ -1,8 +1,6 @@
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 80%;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 999;
@@ -13,5 +11,9 @@ header {
     align-items: center;
   }
 
-
-
+  .slider {
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  

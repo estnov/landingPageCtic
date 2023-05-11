@@ -9,12 +9,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { InicioComponent } from './Components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    InicioComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
