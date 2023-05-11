@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,17 @@ export class AppComponent {
   public mision: string ='';
   public visiones: string ='';
   imageUrls: string[] = [];
+
+  @ViewChild('slickModal')
+  slickModal!: SlickCarouselComponent;
+
+  next() {
+    this.slickModal.slickNext();
+  }
+
+  prev() {
+    this.slickModal.slickPrev();
+  }
 
 
   constructor(private fire : FirebaseService, private storage: AngularFireStorage) { 

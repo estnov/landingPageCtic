@@ -9,7 +9,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { MatCardModule } from  '@angular/material/card'
+import { MatCardModule } from  '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MatCardModule } from  '@angular/material/card'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     SlickCarouselModule,
-    MatCardModule
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
