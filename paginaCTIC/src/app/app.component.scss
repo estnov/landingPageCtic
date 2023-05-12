@@ -62,25 +62,22 @@ ul {
 }
 
 .contact-form {
-    background: #222222;
-    color: #fff;
+
+    color: black;
 }
 
 .contact-form form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    color: #fff;
 }
 
 .contact-form form label {
     display: block;
-    color: #fff;
 }
 
 .contact-form form p {
     margin: 0;
     padding: 1em;
-    color: #fff;
 }
 
 .contact-form form .block {
@@ -95,12 +92,11 @@ ul {
     border: none;
     background: none;
     outline: 0;
-    color: #fff;
-    border-bottom: 1px solid #d63031;
+    border-bottom: 1px solid #2c8ede;
 }
 
 .contact-form form button {
-    background: #B70E21;
+    background: #2c8ede;
     border: 0;
     text-transform: uppercase;
     padding: 1em;
@@ -108,16 +104,15 @@ ul {
 
 .contact-form form button:hover,
 .contact-form form button:focus {
-    background: #d63031;
-    color: #fff;
+    background: #2c8ede;
+    color: black;
     transition: background-color 1s ease-out;
     outline: 0;
 }
 
 /* CONTACT INFO */
 .contact-info {
-    background: #000;
-    color: #fff;
+    color: black;
 }
 
 .contact-info h4, .contact-info ul, .contact-info p {
