@@ -14,6 +14,8 @@ export class AppComponent {
 
   public mision: string ='';
   public visiones: string ='';
+  public imagenVision: string ='';
+  public imagenMision: string ='';
   imageUrls: string[] = [];
 
   @ViewChild('slickModal')
@@ -46,17 +48,9 @@ export class AppComponent {
       }
     });
     this.getImagenesHeader()
+    this.getImagenVision()
+    this.getImagenMision()
  }
-
-  /*getVisionFire(){
-    this.fire.getVision().subscribe(vision => {
-      if (vision.length > 0) {
-        this.visiones = vision[0].descripcion;
-      } else {
-        this.visiones = " Registrar este campo en la Base de Datos ";
-      }
-    });
-  }*/
 
   getImagenesHeader(){
     const storageRef = this.storage.ref('Imagenes/Header'); 
@@ -69,6 +63,29 @@ export class AppComponent {
     });
 
     return this.imageUrls;
+  }
+
+  
+
+  getImagenVision(){
+    this.fire.getImagenVision().subscribe(listResult => {
+      listResult.items.forEach((itemRef: { getDownloadURL: () => Promise<any>; }) => {
+        itemRef.getDownloadURL().then(imageUrl => {
+          this.imagenVision = imageUrl;
+        });
+      });
+    });
+  }
+  
+
+  getImagenMision(){
+    this.fire.getImagenMision().subscribe(listResult => {
+      listResult.items.forEach((itemRef: { getDownloadURL: () => Promise<any>; }) => {
+        itemRef.getDownloadURL().then(imageUrl => {
+          this.imagenMision = imageUrl;
+        });
+      });
+    });
   }
 
   slideConfig = {

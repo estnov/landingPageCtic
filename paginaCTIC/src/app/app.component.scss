@@ -120,6 +120,21 @@ ul {
     margin: 0 0 1rem 0;
 }
 
+.bloqueCircular{
+    display: inline-block; 
+    position: relative; 
+    width: 400px; 
+    height: 400px; 
+    overflow: hidden; 
+    border-radius: 50%;
+}
+
+.bloqueCircular img{
+    width: auto; 
+    height: 100%; 
+    margin-left: -50px;
+}
+
 /* LARGE SIZE */
 @media(min-width: 700px) {
     body {

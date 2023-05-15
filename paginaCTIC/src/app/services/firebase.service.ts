@@ -36,28 +36,13 @@ export class FirebaseService {
     return this.vision$;
   }
 
-  /*getImagenesHeader(){
-    const storageRef = this.storage.ref('Imagenes/Header'); 
-    storageRef.listAll().subscribe(listResult => {
-      listResult.items.forEach(itemRef => {
-        itemRef.getDownloadURL().then(imageUrl => {
-          this.imageUrls.push(imageUrl);
-        });
-      });
-    });
+  getImagenVision(): Observable<any>{
+    const storageRef = this.storage.ref('Imagenes/Vision'); 
+    return storageRef.listAll();
+  }
 
-    return this.imageUrls;
-  }*/
-/*
-  getImagenesEquipo(){
-    const storageRef = this.storage.ref('Imagenes/Equipos'); 
-    storageRef.listAll().subscribe(listResult => {
-      listResult.items.forEach(itemRef => {
-        itemRef.getDownloadURL().then(imageUrl => {
-          this.imageUrls.push(imageUrl);
-        });
-      });
-    });
-    return this.imageUrls;
-  }*/
+  getImagenMision(): Observable<any>{
+    const storageRef = this.storage.ref('Imagenes/Mision'); 
+    return storageRef.listAll();
+  }
 }
