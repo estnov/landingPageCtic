@@ -135,6 +135,19 @@ ul {
     margin-left: -50px;
 }
 
+.bloqueRectangular {
+    display: inline-block; 
+    position: relative; 
+    width: 400px; 
+    height: 200px; 
+    overflow: hidden; 
+}
+.bloqueRectangular img{
+    width: auto; 
+    height: 100%; 
+    margin-left: -50px;
+}
+
 /* LARGE SIZE */
 @media(min-width: 700px) {
     body {

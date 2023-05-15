@@ -14,6 +14,7 @@ export class AppComponent {
 
   public mision: string ='';
   public visiones: string ='';
+  public descripcion: string ='';
   public imagenVision: string ='';
   public imagenMision: string ='';
   public imagenDescripcion: string ='';
@@ -35,7 +36,6 @@ export class AppComponent {
     fire.getMision().subscribe(mision => {
       if (mision.length > 0) {
         this.mision = mision[0].descripcion;
-        console.log('Mision: ', this.mision);
       } else {
         this.mision = "Actualice la mision en la BD de Firebase";
       }
@@ -48,9 +48,19 @@ export class AppComponent {
         this.visiones = " Registrar este campo en la Base de Datos ";
       }
     });
-    this.getImagenesHeader()
-    this.getImagenVision()
-    this.getImagenMision()
+
+    fire.getDescripcion().subscribe(descripcion => {
+      if (descripcion.length > 0) {
+        this.descripcion = descripcion[0].texto;
+      } else {
+        this.descripcion = " Registrar este campo en la Base de Datos ";
+      }
+    });
+
+    this.getImagenesHeader(); 
+    this.getImagenVision();
+    this.getImagenMision();
+    this.getImagenDescripcion();
  }
 
   getImagenesHeader(){
