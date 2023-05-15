@@ -16,6 +16,7 @@ export class AppComponent {
   public visiones: string ='';
   public imagenVision: string ='';
   public imagenMision: string ='';
+  public imagenDescripcion: string ='';
   imageUrls: string[] = [];
 
   @ViewChild('slickModal')
@@ -83,6 +84,17 @@ export class AppComponent {
       listResult.items.forEach((itemRef: { getDownloadURL: () => Promise<any>; }) => {
         itemRef.getDownloadURL().then(imageUrl => {
           this.imagenMision = imageUrl;
+        });
+      });
+    });
+  }
+  
+
+  getImagenDescripcion(){
+    this.fire.getImagenDescripcion().subscribe(listResult => {
+      listResult.items.forEach((itemRef: { getDownloadURL: () => Promise<any>; }) => {
+        itemRef.getDownloadURL().then(imageUrl => {
+          this.imagenDescripcion = imageUrl;
         });
       });
     });

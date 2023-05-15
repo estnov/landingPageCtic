@@ -2,18 +2,20 @@
   <header>
     <a href="#ctic">CTIC</a>
     <a href="servicios">Servicios</a>
-    <a href=""><img src="assets/images/Logo.png" alt="Logo de la empresa" style="width: 100px;"></a>
+    <a href="#inicio"><img src="assets/images/Logo.png" alt="Logo de la empresa" style="width: 100px;"></a>
     <a href="blog">Blog</a>
     <a href="#contactanos">Contactanos</a>
 
   
 </header>
 </div>
-
-<!--Seccion mision y vision-->
 <div style="display: flex; justify-content: center; margin-top: 80px;">
   <body>
-    <div class="slider" id="ctic">
+
+    <!-------------------------------------------------------------------------------------------------------------------------->
+    <!--Seccion mision y vision-->
+    <!-------------------------------------------------------------------------------------------------------------------------->
+    <div class="slider" id="inicio">
       <ngx-slick-carousel 
         class="carrusel"
         [config]="slideConfig"
@@ -64,8 +66,31 @@
 
       <br>
 
+      
+    <!-------------------------------------------------------------------------------------------------------------------------->
+    <!--Seccion CTIC-->
+    <!-------------------------------------------------------------------------------------------------------------------------->
+      <div id="ctic" class="slider">
+        <mat-grid-list cols="2" rowHeight="400px" gutterSize="35px">
+          <mat-grid-tile>
+            <div class="bloqueCircular">
+              <img src="{{imagenDescripcion}}" />
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card style="background-color: white;">
+              <mat-card-title>¿Qué es CTIC?</mat-card-title>
+              <mat-card-content>
+                 {{mision}}
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
 
-      <!--Seccion de contacto-->
+    <!-------------------------------------------------------------------------------------------------------------------------->
+    <!--Seccion de contacto-->
+    <!-------------------------------------------------------------------------------------------------------------------------->
 
       <div class="content" id="contactanos">
         <div class="contact-wrapper animated bounceInUp">

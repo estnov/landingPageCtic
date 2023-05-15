@@ -45,4 +45,9 @@ export class FirebaseService {
     const storageRef = this.storage.ref('Imagenes/Mision'); 
     return storageRef.listAll();
   }
+
+  getImagenDescripcion(): Observable<any>{
+    const storageRef = this.storage.ref('Imagenes/DescripcionCTIC'); 
+    return storageRef.listAll();
+  }
 }
