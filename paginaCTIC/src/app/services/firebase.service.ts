@@ -20,6 +20,12 @@ export class FirebaseService {
   private equiposCollection: AngularFirestoreCollection<any>;
   equipos$: Observable<any[]>;
 
+  private serviciosCollection: AngularFirestoreCollection<any>;
+  servicios$: Observable<any[]>;
+
+  private blogCollection: AngularFirestoreCollection<any>;
+  blogs$: Observable<any[]>;
+
   imageUrls: string[] = [];
 
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage) {
@@ -42,6 +48,16 @@ export class FirebaseService {
     this.equipos$ = this.equiposCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => a.payload.doc.data()))
     );
+
+    this.serviciosCollection = afs.collection<any>('servicios');
+    this.servicios$ = this.serviciosCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => a.payload.doc.data()))
+    );
+
+    this.blogCollection = afs.collection<any>('blog');
+    this.blogs$ = this.blogCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => a.payload.doc.data()))
+    );
   }
 
   getMision(): Observable<any[]> {
@@ -58,6 +74,10 @@ export class FirebaseService {
 
   getEquipos(): Observable<any[]> {
     return this.equipos$;
+  }
+
+  getServicios(): Observable<any[]> { 
+    return this.servicios$;
   }
 
   getImagenVision(): Observable<any>{
