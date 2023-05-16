@@ -19,6 +19,7 @@ export class AppComponent {
   public imagenMision: string ='';
   public imagenDescripcion: string ='';
   imageUrls: string[] = [];
+  public equipos: any[] = [];
 
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
@@ -54,6 +55,18 @@ export class AppComponent {
         this.descripcion = descripcion[0].texto;
       } else {
         this.descripcion = " Registrar este campo en la Base de Datos ";
+      }
+    });
+
+    fire.getEquipos().subscribe(equipos => {
+      if (equipos.length > 0) {
+        this.equipos = [];
+        for(let i=0; i<equipos.length; i++){
+          this.equipos.push(equipos[i]);
+        }
+        console.log(this.equipos)
+      } else {
+        console.log("No hay equipos registrados");
       }
     });
 
