@@ -86,18 +86,20 @@
             </mat-card>
           </mat-grid-tile>
         </mat-grid-list>
-
-        <mat-grid-list cols="3" rowHeight="450px" gutterSize="30px" >
+        <br>
+        <mat-card-title>
+          Equipos:
+        </mat-card-title>
+        <mat-grid-list cols="2" rowHeight="450px" gutterSize="30px" >
           <mat-grid-tile *ngFor="let equipo of equipos">
             <mat-card class="equipos-card">
-              <img mat-card-md-image src={{equipo.imagen}}>
+              <img mat-card-lg-image src={{equipo.imagen}}>
               <mat-card-header>
                 <mat-card-title-group>
                   <mat-card-title>{{equipo.titulo}}</mat-card-title>
                   <mat-card-subtitle>{{equipo.cargos}}</mat-card-subtitle>
                 </mat-card-title-group>
               </mat-card-header>
-              
               <mat-card-content>
                 {{equipo.descripcion}}
               </mat-card-content>

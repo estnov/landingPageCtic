@@ -80,6 +80,10 @@ export class FirebaseService {
     return this.servicios$;
   }
 
+  getBlogs(): Observable<any[]> {
+    return this.blogs$;
+  }
+
   getImagenVision(): Observable<any>{
     const storageRef = this.storage.ref('Imagenes/Vision'); 
     return storageRef.listAll();

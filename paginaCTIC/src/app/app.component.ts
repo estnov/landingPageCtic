@@ -20,6 +20,8 @@ export class AppComponent {
   public imagenDescripcion: string ='';
   imageUrls: string[] = [];
   public equipos: any[] = [];
+  public servicios: any[] = [];
+  public blogs: any[] = [];
 
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
@@ -64,9 +66,32 @@ export class AppComponent {
         for(let i=0; i<equipos.length; i++){
           this.equipos.push(equipos[i]);
         }
-        console.log(this.equipos)
       } else {
         console.log("No hay equipos registrados");
+      }
+    });
+
+
+    fire.getServicios().subscribe(servicios => {
+      if (servicios.length > 0) {
+        this.servicios = [];
+        for(let i=0; i<servicios.length; i++){
+          this.servicios.push(servicios[i]);
+        }
+      } else {
+        console.log("No hay servicios instanciados en la BD");
+      }
+    });
+
+
+    fire.getBlogs().subscribe(blogs => {
+      if (blogs.length > 0) {
+        this.blogs = [];
+        for(let i=0; i<blogs.length; i++){
+          this.blogs.push(blogs[i]);
+        }
+      } else {
+        console.log("No hay objetos para el blog instanciados en la BD");
       }
     });
 
