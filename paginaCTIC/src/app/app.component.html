@@ -21,7 +21,7 @@
         [config]="slideConfig"
         #slickModal="slick-carousel"
         >
-        <div ngxSlickItem *ngFor="let imagen of imageUrls">
+        <div ngxSlickItem *ngFor="let imagen of imageUrls" class="bloqueHeader">
           <img src="{{imagen}}" alt="" />
         </div>
       </ngx-slick-carousel>
@@ -90,8 +90,8 @@
         <mat-card-title>
           Equipos:
         </mat-card-title>
-        <mat-grid-list cols="2" rowHeight="450px" gutterSize="30px" >
-          <mat-grid-tile *ngFor="let equipo of equipos">
+        <mat-grid-list cols="2" gutterSize="30px" >
+          <mat-grid-tile *ngFor="let equipo of equipos" [style.flex]="'1 0 auto'">
             <mat-card class="equipos-card">
               <img mat-card-lg-image src={{equipo.imagen}}>
               <mat-card-header>

@@ -17,6 +17,20 @@ header {
     box-shadow: 10px 10px 30px rgba(33, 146, 211, 0.696);
   }
 
+  
+
+.bloqueHeader {
+    display: inline-block; 
+    position: relative; 
+    width: 400px; 
+    height: 300px; 
+    overflow: hidden; 
+}
+.bloqueHeader img{
+    width: auto; 
+    height: 100%; 
+}
+
   .slider {
     width: 50%;
     margin: 0 auto;
@@ -147,6 +161,8 @@ ul {
     height: 100%; 
     margin-left: -50px;
 }
+
+
 
 .equipos-card{
     

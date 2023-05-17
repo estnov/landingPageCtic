@@ -102,6 +102,7 @@ export class AppComponent {
  }
 
   getImagenesHeader(){
+    this.imageUrls=[];
     const storageRef = this.storage.ref('Imagenes/Header'); 
     storageRef.listAll().subscribe(listResult => {
       listResult.items.forEach(itemRef => {
@@ -110,7 +111,7 @@ export class AppComponent {
         });
       });
     });
-
+    console.log(this.imageUrls);
     return this.imageUrls;
   }
 
