@@ -37,6 +37,22 @@ export class AppComponent {
   }
 
 
+  panelOpenState = false;
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+
+
   constructor(private fire : FirebaseService, private storage: AngularFireStorage) { 
     fire.getMision().subscribe(mision => {
       if (mision.length > 0) {
