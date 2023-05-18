@@ -109,6 +109,38 @@
       </div>
 
     <!-------------------------------------------------------------------------------------------------------------------------->
+    <!--Seccion de Servicios-->
+    <!-------------------------------------------------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------------------------------------------------------------->
+    <!--Seccion de Blog-->
+    <!-------------------------------------------------------------------------------------------------------------------------->
+
+    <div id="blog" class="blog">
+      <mat-grid-list cols="2" gutterSize="30px" >
+        <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'1 0 auto'">
+          <mat-card class="equipos-card">
+            <img mat-card-lg-image src={{blog.imagen}}>
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>{{blog.titulo}}</mat-card-title>
+               <!-- <mat-card-subtitle>{{blog.texto}}</mat-card-subtitle>-->
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+              <button mat-fab extended color="warn">
+                <mat-icon>assignment </mat-icon>
+                LEER EL POST
+              </button>
+              <!--{{blog.texto}}-->
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <!------------------------>
+    </div>
+
+    <!-------------------------------------------------------------------------------------------------------------------------->
     <!--Seccion de contacto-->
     <!-------------------------------------------------------------------------------------------------------------------------->
 

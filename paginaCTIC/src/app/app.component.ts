@@ -23,6 +23,8 @@ export class AppComponent {
   public servicios: any[] = [];
   public blogs: any[] = [];
 
+  private blog:any[] = []
+
   @ViewChild('slickModal')
   slickModal!: SlickCarouselComponent;
 
@@ -70,7 +72,6 @@ export class AppComponent {
         console.log("No hay equipos registrados");
       }
     });
-
 
     fire.getServicios().subscribe(servicios => {
       if (servicios.length > 0) {
