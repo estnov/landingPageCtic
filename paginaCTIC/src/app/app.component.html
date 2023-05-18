@@ -90,8 +90,8 @@
         <mat-card-title>
           Equipos:
         </mat-card-title>
-        <mat-grid-list cols="2" gutterSize="30px" class="custom-grid-list" >
-          <mat-grid-tile *ngFor="let equipo of equipos" class="custom-grid-tile">
+        <mat-grid-list cols="2" gutterSize="30px" >
+          <mat-grid-tile *ngFor="let equipo of equipos" [style.flex]="'1 0 auto'">
             <mat-card class="equipos-card">
               <img mat-card-lg-image src={{equipo.imagen}}>
               <mat-card-header>
