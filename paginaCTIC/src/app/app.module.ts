@@ -16,6 +16,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AppRoutingModule,
     NgImageSliderModule,
     BrowserAnimationsModule,
+    MatInputModule,
     MatGridListModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
