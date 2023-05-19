@@ -17,10 +17,14 @@ import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ServicioComponent } from './components/servicio/servicio.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ServicioComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

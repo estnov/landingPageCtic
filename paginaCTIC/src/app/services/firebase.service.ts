@@ -61,7 +61,7 @@ export class FirebaseService {
   }
 
   getMision(): Observable<any[]> {
-    return this.mision$;
+    return this.mision$;  
   }
 
   getVision(): Observable<any[]> {

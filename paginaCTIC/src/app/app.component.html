@@ -117,13 +117,13 @@
         Servicios:
       </mat-card-title>
       <mat-expansion-panel *ngFor="let servicios of servicios" hideToggle>
-        <mat-expansion-panel-header>
+        <mat-expansion-panel-header style="height: auto; margin: 10px">
           <mat-panel-title>
             {{servicios.titulo}}
           </mat-panel-title>
-          <mat-panel-description>
-            {{servicios.tecnologias}}
-            <mat-icon>account_circle</mat-icon>
+          <mat-panel-description style="margin-left: auto;">
+            <mat-icon>settings_applications</mat-icon>
+              {{servicios.tecnologias}}
           </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-card class="example-card">
@@ -138,11 +138,12 @@
             <p>{{ servicios.descripcion }}</p>
             <mat-divider></mat-divider>
           </mat-card-content>
-          <mat-card-actions>
+          <mat-card-actions style="display: flex; justify-content: center;">
             <button mat-fab extended>
               <mat-icon>favorite</mat-icon>
               LIKE
             </button>
+            <div style="margin: 0 15px"></div>
             <button mat-fab extended >
               <mat-icon>receipt</mat-icon>
               Ver Documentacion
