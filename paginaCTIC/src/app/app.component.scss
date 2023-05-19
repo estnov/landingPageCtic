@@ -209,6 +209,17 @@ ul {
     margin-left: 8px;
   }
 
-  .mat-panel-title{
-    height: auto;
+  
+
+  .slider .mat-expansion-panel .mat-expansion-panel-header .mat-panel-title {
+    width: 100%;
+    margin-left: 50px;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: justify;
+    max-width: 4000px;
+  }
+
+  .button{
+    color: #2c8ede;
   }
