@@ -21,13 +21,16 @@ import { ServicioComponent } from './components/servicio/servicio.component';
 import { BlogComponent } from './components/blog/blog.component';
 import {MatDialogModule } from '@angular/material/dialog';
 import { AdministradorComponent } from './components/administrador/administrador.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServicioComponent,
     BlogComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { AdministradorComponent } from './components/administrador/administrador
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     SlickCarouselModule,
+    FormsModule,
     MatCardModule,
     MatIconModule,
     MatButtonModule,
