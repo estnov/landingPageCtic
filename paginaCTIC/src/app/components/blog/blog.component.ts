@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
+export interface DialogData {
+  blog: any;
+}
 
 @Component({
   selector: 'app-blog',
@@ -6,5 +11,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent {
+
+  public titulo: string = ""
+
+
+  constructor(public dialogRef: MatDialogRef<BlogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,){
+      this.titulo = this.data.blog.titulo
+  }
 
 }

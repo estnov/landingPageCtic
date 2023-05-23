@@ -20,12 +20,14 @@ import { MatInputModule } from '@angular/material/input';
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { BlogComponent } from './components/blog/blog.component';
 import {MatDialogModule } from '@angular/material/dialog';
+import { AdministradorComponent } from './components/administrador/administrador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServicioComponent,
-    BlogComponent
+    BlogComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,

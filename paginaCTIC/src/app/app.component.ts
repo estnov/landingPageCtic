@@ -2,8 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ServicioComponent } from './components/servicio/servicio.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @Component({
   selector: 'app-root',
@@ -191,10 +192,24 @@ export class AppComponent {
   verServicio(servicio: any): void {
     const dialogRef = this.dialog.open(ServicioComponent, {
       data: {servicio: servicio},
+      width: "80%",
+      height: "80%"
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Cerrado el servicio');
+    });
+  }
+
+  verBlog(blog: any): void {
+    const dialogRef = this.dialog.open(BlogComponent, {
+      data: {blog: blog},
+      width: "80%",
+      height: "80%"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado el blog');
     });
   }
 }

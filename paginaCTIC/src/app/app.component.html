@@ -25,11 +25,12 @@
           <img src="{{imagen}}" alt="" />
         </div>
       </ngx-slick-carousel>
-      
       <div style="display:flex; justify-content: center;">
         <button mat-button (click)="prev()" class= "botonesNavegacion"><mat-icon>undo</mat-icon></button>
         <button mat-button (click)="next()" class= "botonesNavegacion"><mat-icon>redo</mat-icon></button>
       </div>
+      
+      
     </div>
     
     <br>
@@ -111,6 +112,7 @@
     <!-------------------------------------------------------------------------------------------------------------------------->
     <!--Seccion de Servicios-->
     <!-------------------------------------------------------------------------------------------------------------------------->
+    <hr>
     <div id="servicios" class="slider">
       
       <mat-card-title>
@@ -144,7 +146,7 @@
               LIKE
             </button>
             <div style="margin: 0 15px"></div>
-            <button mat-fab extended >
+            <button mat-fab extended (click)="verServicio(servicios)">
               <mat-icon>receipt</mat-icon>
               Ver Documentacion
             </button>
@@ -160,6 +162,7 @@
     <!--Seccion de Blog-->
     <!-------------------------------------------------------------------------------------------------------------------------->
     <!---->
+    <hr>
     <div id="blog" class="blog">
       <mat-grid-list cols="2" gutterSize="30px" >
         <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'1 0 auto'">
@@ -172,7 +175,7 @@
               </mat-card-title-group>
             </mat-card-header>
             <mat-card-content>
-              <button mat-fab extended color="warn">
+              <button mat-fab extended color="warn" (click)="verBlog(blog)">
                 <mat-icon>assignment </mat-icon>
                 LEER EL POST
               </button>
