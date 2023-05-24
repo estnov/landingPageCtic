@@ -23,6 +23,10 @@ import {MatDialogModule } from '@angular/material/dialog';
 import { AdministradorComponent } from './components/administrador/administrador.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import {MatSelectModule} from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     ServicioComponent,
     BlogComponent,
     AdministradorComponent,
-    LoginComponent
+    LoginComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +46,12 @@ import { FormsModule } from '@angular/forms';
     MatGridListModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
+    MatPaginatorModule,
     SlickCarouselModule,
     FormsModule,
+    MatTableModule,
     MatCardModule,
+    MatSelectModule,
     MatIconModule,
     MatButtonModule,
     MatDividerModule,

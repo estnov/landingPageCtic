@@ -1,0 +1,68 @@
+.bdrop {
+    background-color: #bbbbbbf2;
+    backdrop-filter: blur(4px);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  .column {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+
+  td {
+    cursor: pointer;
+  }
+
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+
+  .imagenTabla{
+    width: 50px;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column; /* Stack columns on top of each other */
+    }
+    .column {
+      margin: 10px 0; /* Add some spacing between columns */
+    }
+  }
