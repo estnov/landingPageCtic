@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ServicioComponent } from '../servicio/servicio.component';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Observable } from '@firebase/util';
+import { ModificarComponent } from '../modificar/modificar.component';
 
 const data: any[] = [
   {titulo: 'Titulo de prueba', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
@@ -62,7 +63,16 @@ export class AdministradorComponent {
     }
 
     modificar(elemento:any){
-      console.log(elemento)
+
+      const dialogRef = this.dialog.open(ModificarComponent, {
+        data: {elemento:elemento},
+        width: "80%",
+        height: "80%"
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
     }
 
     async cambioColeccion(value:any){
@@ -101,6 +111,10 @@ export class AdministradorComponent {
       }
       this.dataSource.paginator = this.paginator;
       
+    }
+
+    openModificarDialog(elemento:any): void {
+
     }
 
 }
