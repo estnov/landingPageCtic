@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection, QuerySnapshot } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Observable, map } from 'rxjs';
+import { Observable  } from 'rxjs';
+import {map} from 'rxjs/operators'
+import { collection, doc, setDoc } from "firebase/firestore";
 
 @Injectable({
   providedIn: 'root'
@@ -98,4 +100,5 @@ export class FirebaseService {
     const storageRef = this.storage.ref('Imagenes/DescripcionCTIC'); 
     return storageRef.listAll();
   }
+
 }

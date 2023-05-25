@@ -1,7 +1,9 @@
-.bdrop {
-    background-color: #bbbbbbf2;
-    backdrop-filter: blur(4px);
-}
+
+.hello {
+    background-color:rgba(255,255,255,.3);
+    backdrop-filter: blur(10px);
+  }
+  
 
 body {
     display: flex;
@@ -40,10 +42,6 @@ body {
     text-align: left;
   }
 
-  td {
-    cursor: pointer;
-  }
-
   .mat-mdc-row .mat-mdc-cell {
     border-bottom: 1px solid transparent;
     border-top: 1px solid transparent;
@@ -52,6 +50,7 @@ body {
   
   .mat-mdc-row:hover .mat-mdc-cell {
     border-color: currentColor;
+    background-color: #adadad;
   }
 
   .imagenTabla{

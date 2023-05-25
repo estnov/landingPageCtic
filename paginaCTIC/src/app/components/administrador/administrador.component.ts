@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { Route, Router } from '@angular/router';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { ServicioComponent } from '../servicio/servicio.component';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { Observable } from '@firebase/util';
 
-const Data: any[] = [
+const data: any[] = [
   {titulo: 'Titulo de prueba', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
   {titulo: 'Titulo 2', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
   {titulo: 'Titulo 3', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'HTML, Css'},
@@ -21,10 +26,19 @@ const Data: any[] = [
 })
 export class AdministradorComponent {
   
-    public dataSource: any[] =[];
+    public dataSource = new MatTableDataSource<any>(data);
+    documents$: Observable<any[]>;
     displayedColumns: string[] = ['titulo', 'descripcion', 'imagen'];
 
-    constructor(private dialog: MatDialog, private router: Router) { }
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+
+    ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator;
+    }
+
+    constructor(private dialog: MatDialog, private router: Router, private fire: FirebaseService) { 
+      
+    }
 
     ngOnInit(): void {
       this.openLoginDialog();
@@ -32,14 +46,15 @@ export class AdministradorComponent {
   
     openLoginDialog(): void {
       const dialogRef = this.dialog.open(LoginComponent, {
+        backdropClass: "hello",
         disableClose: true,
-        backdropClass: "bdrop",
       });
   
       dialogRef.afterClosed().subscribe((result: boolean) => {
         if (result) {
           alert("Bienvenido administrador")
-          this.dataSource = Data;
+          this.dataSource = new MatTableDataSource<any>(data);
+          this.dataSource.paginator = this.paginator;
         } else {
           this.router.navigate(['/']);
         }
@@ -48,6 +63,44 @@ export class AdministradorComponent {
 
     modificar(elemento:any){
       console.log(elemento)
+    }
+
+    async cambioColeccion(value:any){
+      console.log(value.value)
+      switch(value.value){
+        case 'blog':
+          let blogsList: any[]=[];
+          this.fire.getBlogs().subscribe(blogs => {
+            if (blogs.length > 0) {
+              for(let i=0; i<blogs.length; i++){
+                blogsList.push(blogs[i]);
+              }
+              this.dataSource = new MatTableDataSource(blogsList);
+              
+            } else {
+              console.log("No hay objetos para el blog instanciados en la BD");
+            }
+          });
+          break;
+
+        case 'equipos':
+          let equiposList: any[]=[];
+          this.fire.getEquipos().subscribe(equipos => {
+            if (equipos.length > 0) {
+              for(let i=0; i<equipos.length; i++){
+                equiposList.push(equipos[i]);
+              }
+              this.dataSource = new MatTableDataSource(equiposList);
+              
+            } else {
+              console.log("No hay objetos para el blog instanciados en la BD");
+            }
+          });
+          break;
+          
+      }
+      this.dataSource.paginator = this.paginator;
+      
     }
 
 }
