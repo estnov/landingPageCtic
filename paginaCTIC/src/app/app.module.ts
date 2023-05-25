@@ -27,6 +27,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import {MatSelectModule} from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { ModificarComponent } from './components/modificar/modificar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     BlogComponent,
     AdministradorComponent,
     LoginComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,
