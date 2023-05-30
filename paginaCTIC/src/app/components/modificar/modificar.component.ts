@@ -15,6 +15,10 @@ export class ModificarComponent {
     this.titulo = data.elemento.titulo;
   }
 
+  onFileChange(event:any){
+    
+  }
+
 
 
 }

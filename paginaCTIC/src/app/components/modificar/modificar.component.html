@@ -1,24 +1,23 @@
-<h2>Modificar</h2>
-<body>
-    <mat-grid-list cols = "2" rowHeight="fit">
-        <mat-grid-tile>
-            <mat-label>Titulo</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <input matInput placeholder="{{titulo}}" [(ngModel)]="titulo" name="titulo" required>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-label>Titulo</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <input matInput placeholder="{{titulo}}" [(ngModel)]="titulo" name="titulo" required>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <mat-label>Titulo</mat-label>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <input matInput placeholder="{{titulo}}" [(ngModel)]="titulo" name="titulo" required>
-        </mat-grid-tile>
-    </mat-grid-list>
 
-</body>
+
+<mat-card style="justify-content: center;">
+    <mat-card-title>
+        <h2>Modificar</h2>
+    </mat-card-title>
+    
+</mat-card>
+<hr>
+<mat-card>
+    <mat-card-content>
+        <mat-label>Título</mat-label>
+        <input matInput type="text" [(ngModel)]="titulo" name="title" placeholder="{{titulo}}"/>
+    </mat-card-content>
+    <mat-card-content>
+        <mat-label>Descripción</mat-label>
+        <textarea matInput [(ngModel)]="titulo" name="description"></textarea>
+    </mat-card-content>
+    <mat-card-content>
+        <mat-label>Tecnologías</mat-label>
+        <input matInput type="text" [(ngModel)]="titulo" name="technologies"/>
+    </mat-card-content>
+</mat-card>

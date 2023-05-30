@@ -10,14 +10,7 @@ import { Observable } from '@firebase/util';
 import { ModificarComponent } from '../modificar/modificar.component';
 
 const data: any[] = [
-  {titulo: 'Titulo de prueba', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
-  {titulo: 'Titulo 2', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
-  {titulo: 'Titulo 3', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'HTML, Css'},
-  {titulo: 'Titulo 4', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
-  {titulo: 'Titulo de 5', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
-  {titulo: 'Titulo de 6', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
-  {titulo: 'Titulo 2', descripcion: 'prueba de la descripción', imagen: 'https://firebasestorage.googleapis.com/v0/b/bd-ctic.appspot.com/o/Imagenes%2FServicios%2Fimage_2023-05-16_151620323.png?alt=media&token=654f3d76-365b-488e-ba8e-df5b5b0c8fbe', tecnologias: 'ABAP, SAP'},
-
+  
 ];
 
 @Component({
