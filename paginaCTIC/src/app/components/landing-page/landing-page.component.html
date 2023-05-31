@@ -1,15 +1,14 @@
-
-<!--<div style="display: flex; justify-content: center;">-->
+<div class="bodies">
+  <div class="menu">
     <header>
-      <a href="#inicio"><img src="assets/images/Logo.png" alt="Logo de la empresa" style="width: 100px;"></a>
-      <a href="#ctic">CTIC</a>
-      <a href="#servicios">Servicios</a>
-      <a href="blog">Blog</a>
-      <a href="#contactanos">Contactanos</a>
-  </header>
-  <!--</div>-->
-  <!---<div style="display: flex; justify-content: center; margin-top: 80px;">--->
-    <body>
+          <a href="#inicio" class="menu2" ><img src="assets/images/Logo.png" alt="Logo de la empresa" style="width: 100px;"></a>
+          <a href="#ctic" class="menu2">CTIC</a>
+          <a href="#servicios" class="menu2">Servicios</a>
+          <a href="blog" class="menu2">Blog</a>
+          <a href="#contactanos" class="menu2 x">Contactanos</a>
+    </header>
+  </div>
+<body>
   
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion mision y vision-->
@@ -24,24 +23,18 @@
             <img src="{{imagen}}" alt="" />
           </div>
         </ngx-slick-carousel>
-        <!--<div style="display:flex; justify-content: center;">
-          <button mat-button (click)="prev()" class= "botonesNavegacion"><mat-icon>undo</mat-icon></button>
-          <button mat-button (click)="next()" class= "botonesNavegacion"><mat-icon>redo</mat-icon></button>
-        </div>-->
-        
-        
       </div>
       
       <br>
     
-      <mat-grid-list cols="2" rowHeight="400px" gutterSize="35px">
+      <mat-grid-list class="gac" cols="4" rowHeight="350px" gutterSize="0.5px">
         <mat-grid-tile>
           <div class="bloqueCircular">
             <img src="{{imagenMision}}" />
           </div>
         </mat-grid-tile>
         <mat-grid-tile>
-          <mat-card>
+          <mat-card  class="contenido">
             <mat-card-title>MISIÓN</mat-card-title>
             <mat-card-content>
                {{mision}}
@@ -50,7 +43,7 @@
         </mat-grid-tile>
       
           <mat-grid-tile>
-            <mat-card style="background-color: white;">
+            <mat-card class="contenido">
               <mat-card-title >VISIÓN</mat-card-title>
               <mat-card-content>
                  {{visiones}}
@@ -112,8 +105,7 @@
       <!--Seccion de Servicios-->
       <!-------------------------------------------------------------------------------------------------------------------------->
       <hr>
-      <div id="servicios" class="slider">
-        
+      <div id="servicios" class="contenido">
         <mat-card-title>
           Servicios:
         </mat-card-title>
@@ -236,7 +228,5 @@
           </div>
       
       </div>
-    
-    </body>
-    
-  <!---</div>--->
+</body>
+</div>
