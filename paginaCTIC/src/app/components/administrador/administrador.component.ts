@@ -69,12 +69,14 @@ export class AdministradorComponent {
     }
 
     async cambioColeccion(value:any){
+      localStorage.setItem('tipo', value.value);
       console.log(value.value)
       switch(value.value){
         case 'blog':
           let blogsList: any[]=[];
           this.fire.getBlogs().subscribe(blogs => {
             if (blogs.length > 0) {
+              console.log(blogs)
               for(let i=0; i<blogs.length; i++){
                 blogsList.push(blogs[i]);
               }

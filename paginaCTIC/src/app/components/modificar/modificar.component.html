@@ -1,23 +1,44 @@
 
 
 <mat-card style="justify-content: center;">
-    <mat-card-title>
+    <mat-card-title style="text-align: center; margin-top: 5px;">
         <h2>Modificar</h2>
     </mat-card-title>
-    
 </mat-card>
 <hr>
 <mat-card>
     <mat-card-content>
-        <mat-label>Título</mat-label>
-        <input matInput type="text" [(ngModel)]="titulo" name="title" placeholder="{{titulo}}"/>
+        <mat-label class="left-align">Título:</mat-label>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="titulo" name="title" placeholder="{{titulo}}"/>
+        </mat-form-field>
     </mat-card-content>
-    <mat-card-content>
-        <mat-label>Descripción</mat-label>
-        <textarea matInput [(ngModel)]="titulo" name="description"></textarea>
+    <mat-card-content *ngIf="!ocultarAutor">
+        <mat-label class="left-align">Autor:</mat-label>
+        <mat-form-field>
+            <input matInput type="text" [(ngModel)]="autor" name="autor" placeholder="{{autor}}"/>
+        </mat-form-field>
     </mat-card-content>
-    <mat-card-content>
-        <mat-label>Tecnologías</mat-label>
-        <input matInput type="text" [(ngModel)]="titulo" name="technologies"/>
+    <mat-card-content *ngIf="!ocultarDescripcion">
+        <mat-label class="left-align" >Descripción:</mat-label>
+        <mat-form-field >
+            <textarea matInput rows="6" [(ngModel)]="descripcion" name="description" style="background-color: red;" ></textarea>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-content *ngIf="!ocultarTexto">
+        <mat-label class="left-align" >Texto:</mat-label>
+        <mat-form-field>
+            <textarea matInput rows="6" [(ngModel)]="texto" name="texto" placeholder="{{texto}}" ></textarea>
+        </mat-form-field>
     </mat-card-content>
 </mat-card>
+<mat-card>
+    <mat-card-content>
+        <mat-label class="left-align">Imagen:</mat-label>
+        <mat-form-field>
+            <!--<img class="imagenLocal" src="{{imagen}}" name="imagen">-->
+            <input [hidden]="true" matInput type="text" [(ngModel)]="imagen" name="imagen" placeholder="{{imagen}}"/>
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>
+

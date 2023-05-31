@@ -58,7 +58,13 @@ export class FirebaseService {
 
     this.blogCollection = afs.collection<any>('blog');
     this.blogs$ = this.blogCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => a.payload.doc.data()))
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const uid = a.payload.doc.id;
+          return { uid, data }; // Include UID in the returned object
+        });
+      })
     );
   }
 
