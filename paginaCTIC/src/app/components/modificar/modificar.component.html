@@ -32,13 +32,21 @@
         </mat-form-field>
     </mat-card-content>
 </mat-card>
-<mat-card>
-    <mat-card-content>
-        <mat-label class="left-align">Imagen:</mat-label>
-        <mat-form-field>
-            <!--<img class="imagenLocal" src="{{imagen}}" name="imagen">-->
-            <input [hidden]="true" matInput type="text" [(ngModel)]="imagen" name="imagen" placeholder="{{imagen}}"/>
-        </mat-form-field>
+<mat-card class="imagenParent">
+    <mat-card-content >
+        <mat-label class="left-align" >Imagen:</mat-label>
     </mat-card-content>
+    <div class="container">
+        <img src="{{imagen}}" alt="" />
+        <div class="overlay"></div>
+        <div class="button" >
+            <a> <input mat-raised-button color="primary" type="file" (change)="cambiarImagen($event)" accept="image/*"></a>
+            
+        </div>
+    </div>
 </mat-card>
-
+<hr>
+<mat-card class="imagenParent"> 
+    <button mat-raised-button color="primary" (click)="guardar()" class="guardar">Modificar</button>
+    <br>
+</mat-card>

@@ -4,7 +4,7 @@
         <h2>Secciones</h2>
         <mat-form-field>
           <mat-label>Documentos firebase</mat-label>
-          <mat-select (selectionChange)="cambioColeccion($event)">
+          <mat-select (selectionChange)="cambioColeccion($event)" value="{{valueSelect}}">
             <mat-option value="blog">Blog</mat-option>
             <mat-option value="equipos">Equipos</mat-option>
             <mat-option value="servicios">Servicios</mat-option>
@@ -12,7 +12,13 @@
         </mat-form-field>
       </div>
       <div class="column">
-        <h2>Entradas:</h2>
+        <div style="display: flex; align-items: center;">
+          <h2 style="margin-top: 11px;">Entradas: </h2>
+          <button mat-icon-button aria-label="" >
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+        
         <div style="height: 80%;">
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
                 <div style="height: 80%;">
@@ -21,18 +27,13 @@
                     <th mat-header-cell *matHeaderCellDef>Titulo</th>
                     <td mat-cell *matCellDef="let element" class="row">{{element.data.titulo}}</td>
                   </ng-container>
-                
-                  <!-- Name Column -->
-                  <ng-container matColumnDef="descripcion">
-                    <th mat-header-cell *matHeaderCellDef>Descripción</th>
-                    <td mat-cell *matCellDef="let element" class="row">{{element.descripcion}}</td>
-                  </ng-container>
+              
                 
                   <!-- Weight Column -->
                   <ng-container matColumnDef="imagen">
                     <th mat-header-cell *matHeaderCellDef>Imagen</th>
                     <td mat-cell *matCellDef="let element" class="row">
-                      <img class="imagenTabla" src="{{element.imagen}}">
+                      <img class="imagenTabla" src="{{element.data.imagen}}">
                   </td>
                   </ng-container>
                 

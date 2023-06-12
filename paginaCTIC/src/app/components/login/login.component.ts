@@ -16,7 +16,9 @@ export class LoginComponent {
     console.log(this.username);
     console.log(this.password);
     if (this.username === 'root' && this.password === 'root') {
+      localStorage.setItem('logged', 'true');
       this.dialogRef.close(true); 
+
     } else {
       alert('Invalid username or password');
     }

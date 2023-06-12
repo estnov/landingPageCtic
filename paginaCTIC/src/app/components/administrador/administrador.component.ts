@@ -21,8 +21,9 @@ const data: any[] = [
 export class AdministradorComponent {
   
     public dataSource = new MatTableDataSource<any>(data);
+    public valueSelect: string = 'blog';
     documents$: Observable<any[]>;
-    displayedColumns: string[] = ['titulo', 'descripcion', 'imagen'];
+    displayedColumns: string[] = ['titulo', 'imagen'];
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -31,11 +32,21 @@ export class AdministradorComponent {
     }
 
     constructor(private dialog: MatDialog, private router: Router, private fire: FirebaseService) { 
-      
+      if(localStorage.getItem('tipo')!=null){
+        this.valueSelect = localStorage.getItem('tipo')+"";
+        let val: any = {value: localStorage.getItem('tipo')+""};
+        this.cambioColeccion(val)
+      } else {
+        this.valueSelect = "blog";
+        let val: any = {value: "blog"};
+        this.cambioColeccion(val)
+      }
     }
 
     ngOnInit(): void {
-      this.openLoginDialog();
+      if(localStorage.getItem('logged') != 'true'){
+        this.openLoginDialog();
+      } 
     }
   
     openLoginDialog(): void {
@@ -65,6 +76,7 @@ export class AdministradorComponent {
   
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
+        window.location.reload();    
       });
     }
 

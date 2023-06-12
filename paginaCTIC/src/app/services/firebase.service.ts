@@ -107,4 +107,42 @@ export class FirebaseService {
     return storageRef.listAll();
   }
 
+  uploadImage(file: File, type: string): Observable<string> {
+    const filePath = `Imagenes/${type}/${file.name}`;
+    const ref = this.storage.ref(filePath);
+    const task = ref.put(file);
+
+    return new Observable<string>(observer => {
+      task.then(snapshot => {
+        snapshot.ref.getDownloadURL().then(url => {
+          observer.next(url);
+          observer.complete();
+        });
+      }).catch(error => {
+        observer.error(error);
+        observer.complete();
+      });
+    });
+  }
+
+  updateDocument(documentId: string, titulo: string, autor: string, texto: string, imagen: string, tipo: string): Observable<any> {
+    // Update the document using the Firestore update method
+    return  Observable.create((observer:any) => {this.afs.collection(tipo).doc(documentId).update({
+      titulo: titulo,
+      autor: autor,
+      texto: texto,
+      imagen: imagen
+    })
+    .then(() => {
+      console.log('Document updated successfully.');
+      observer.next();
+      observer.complete();
+    })
+    .catch((error) => {
+      console.error('Error updating document: ', error);
+      observer.error("Error al actualizar el documento");
+    });
+  });
+  }
+
 }
