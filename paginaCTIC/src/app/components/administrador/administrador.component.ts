@@ -111,6 +111,7 @@ export class AdministradorComponent {
             } else {
               console.log("No hay objetos para el blog instanciados en la BD");
             }
+            this.dataSource.paginator = this.paginator;
           });
           break;
 
@@ -127,6 +128,7 @@ export class AdministradorComponent {
             } else {
               console.log("No hay objetos para los equipos instanciados en la BD");
             }
+            this.dataSource.paginator = this.paginator;
           });
           break;
           
@@ -142,10 +144,12 @@ export class AdministradorComponent {
               } else {
                 console.log("No hay objetos para los servicios en la BD");
               }
+              this.dataSource.paginator = this.paginator;
             });
             break;
       }
-      this.dataSource.paginator = this.paginator;
+
+      
       
     }
 

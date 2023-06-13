@@ -49,7 +49,7 @@
         <mat-label class="left-align" >Imagen:</mat-label>
     </mat-card-content>
     <div class="container">
-        <img src="{{imagen}}" alt="" />
+        <img src="{{imagen}}" *ngIf="imagen!=''" />
         <div class="overlay"></div>
         <div class="button" >
             <a> <input mat-raised-button color="primary" type="file" (change)="cambiarImagen($event)" accept="image/*"></a>
@@ -64,9 +64,18 @@
     <div style="display: flex;
     flex-direction: column;
     align-items: center;">
-        <input type="file" (change)="onFileSelected($event)">
+        <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+        <div class="file-upload">
+
+            {{fileName || "No se ha seleccionado ningún archivo"}}
+         
+             <button mat-mini-fab color="primary" class="upload-btn"
+               (click)="fileUpload.click()">
+                 <mat-icon>attach_file</mat-icon>
+             </button>
+         </div>
         <br>
-        <button (click)="uploadFile()">Subir archivo</button>
+        <button mat-button (click)="uploadFile()">Subir archivo</button>
         
         <div *ngIf="documentLink">
           <h3>Archivo subido correctamente</h3>

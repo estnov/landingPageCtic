@@ -23,6 +23,8 @@ export class ModificarComponent {
   public cargos: string = '';
   public tecnologias: string = '';
 
+  public fileName: string | undefined = '';
+
   public ocultarDescripcion: boolean = true;
   public ocultarTexto: boolean = true;
   public ocultarAutor: boolean = true;
@@ -120,6 +122,7 @@ export class ModificarComponent {
 
   onFileSelected(event: any): void {
     this.document = event.target.files[0];
+    this.fileName = this.document?.name;
   }
 
   uploadFile(): void {
