@@ -48,12 +48,24 @@ export class FirebaseService {
 
     this.equiposCollection = afs.collection<any>('equipos');
     this.equipos$ = this.equiposCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => a.payload.doc.data()))
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const uid = a.payload.doc.id;
+          return { uid, data }; // Include UID in the returned object
+        });
+      })
     );
 
     this.serviciosCollection = afs.collection<any>('servicios');
     this.servicios$ = this.serviciosCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => a.payload.doc.data()))
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const uid = a.payload.doc.id;
+          return { uid, data }; // Include UID in the returned object
+        });
+      })
     );
 
     this.blogCollection = afs.collection<any>('blog');
@@ -125,13 +137,37 @@ export class FirebaseService {
     });
   }
 
-  updateDocument(documentId: string, titulo: string, autor: string, texto: string, imagen: string, tipo: string): Observable<any> {
+  uploadFile(file: File): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      const filePath = `Documentos/${file.name}`;
+      const fileRef = this.storage.ref(filePath);
+      const task = this.storage.upload(filePath, file);
+
+      task.snapshotChanges().subscribe(
+        () => {},
+        error => reject(error),
+        () => {
+          fileRef.getDownloadURL().subscribe(
+            url => resolve(url),
+            error => reject(error)
+          );
+        }
+      );
+    });
+  }
+
+  updateDocument(documentId: string, titulo: string, autor: string, texto: string, imagen: string, cargos:string, descripcion:string, tecnologias:string, documento: string, tipo: string): Observable<any> {
     // Update the document using the Firestore update method
     return  Observable.create((observer:any) => {this.afs.collection(tipo).doc(documentId).update({
       titulo: titulo,
       autor: autor,
       texto: texto,
-      imagen: imagen
+      imagen: imagen,
+      cargos: cargos,
+      descripcion: descripcion,
+      tecnologias: tecnologias,
+      documento: documento
+
     })
     .then(() => {
       console.log('Document updated successfully.');
@@ -143,6 +179,30 @@ export class FirebaseService {
       observer.error("Error al actualizar el documento");
     });
   });
+  }
+
+  createDocument(titulo: string, autor: string, texto: string, imagen: string, cargos:string, descripcion:string, tecnologias:string, documento: string, tipo: string): Observable<any> {
+    return Observable.create((observer:any) => {
+      this.afs.collection(tipo).add({
+        titulo: titulo,
+        autor: autor,
+        texto: texto,
+        imagen: imagen,
+        cargos: cargos,
+        descripcion: descripcion,
+        tecnologias: tecnologias,
+        documento: documento
+      })
+      .then((docRef) => {
+        console.log('Document created successfully. Document ID:', docRef.id);
+        observer.next(docRef.id); 
+        observer.complete(); 
+      })
+      .catch((error) => {
+        console.error('Error creating document: ', error);
+        observer.error('Failed to create document.'); // Emit error value
+      });
+    });
   }
 
 }

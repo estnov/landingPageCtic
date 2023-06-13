@@ -80,20 +80,34 @@ export class AdministradorComponent {
       });
     }
 
+    crear(){
+      let elemento: any = {titulo: "", imagen: "", contenido: "", fecha: "", autor: "", categoria: "", id: ""};
+      const dialogRef = this.dialog.open(ModificarComponent, {
+        data: {elemento:elemento},
+        width: "80%",
+        height: "80%"
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        window.location.reload();    
+      });
+    }
+
     async cambioColeccion(value:any){
       localStorage.setItem('tipo', value.value);
       console.log(value.value)
       switch(value.value){
         case 'blog':
-          let blogsList: any[]=[];
+          
           this.fire.getBlogs().subscribe(blogs => {
+            let blogsList: any[]=[];
             if (blogs.length > 0) {
               console.log(blogs)
               for(let i=0; i<blogs.length; i++){
                 blogsList.push(blogs[i]);
               }
               this.dataSource = new MatTableDataSource(blogsList);
-              
             } else {
               console.log("No hay objetos para el blog instanciados en la BD");
             }
@@ -101,20 +115,35 @@ export class AdministradorComponent {
           break;
 
         case 'equipos':
-          let equiposList: any[]=[];
+          
           this.fire.getEquipos().subscribe(equipos => {
+            let equiposList: any[]=[];
             if (equipos.length > 0) {
               for(let i=0; i<equipos.length; i++){
                 equiposList.push(equipos[i]);
               }
               this.dataSource = new MatTableDataSource(equiposList);
-              
+              console.log(equiposList)
             } else {
-              console.log("No hay objetos para el blog instanciados en la BD");
+              console.log("No hay objetos para los equipos instanciados en la BD");
             }
           });
           break;
           
+          case 'servicios':
+            this.fire.getServicios().subscribe(servicios => {
+              let serviciosList: any[]=[];
+              if (servicios.length > 0) {
+                for(let i=0; i<servicios.length; i++){
+                  serviciosList.push(servicios[i]);
+                }
+                this.dataSource = new MatTableDataSource(serviciosList);
+                console.log(serviciosList)
+              } else {
+                console.log("No hay objetos para los servicios en la BD");
+              }
+            });
+            break;
       }
       this.dataSource.paginator = this.paginator;
       

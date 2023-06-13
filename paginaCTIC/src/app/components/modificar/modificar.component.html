@@ -2,7 +2,7 @@
 
 <mat-card style="justify-content: center;">
     <mat-card-title style="text-align: center; margin-top: 5px;">
-        <h2>Modificar</h2>
+        <h2>{{tituloVentana}}</h2>
     </mat-card-title>
 </mat-card>
 <hr>
@@ -18,11 +18,23 @@
         <mat-form-field>
             <input matInput type="text" [(ngModel)]="autor" name="autor" placeholder="{{autor}}"/>
         </mat-form-field>
+    </mat-card-content>    
+    <mat-card-content *ngIf="!ocultarCargos">
+        <mat-label class="left-align" >Cargos:</mat-label>
+        <mat-form-field >
+            <input matInput type="text" [(ngModel)]="cargos" name="autor" placeholder="{{cargos}}"/>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-content *ngIf="!ocultarTecnologias">
+        <mat-label class="left-align" >Tecnologías:</mat-label>
+        <mat-form-field >
+            <input matInput type="text" [(ngModel)]="tecnologias" name="autor" placeholder="{{tecnologias}}"/>
+        </mat-form-field>
     </mat-card-content>
     <mat-card-content *ngIf="!ocultarDescripcion">
         <mat-label class="left-align" >Descripción:</mat-label>
         <mat-form-field >
-            <textarea matInput rows="6" [(ngModel)]="descripcion" name="description" style="background-color: red;" ></textarea>
+            <textarea matInput rows="6" [(ngModel)]="descripcion" name="description"  ></textarea>
         </mat-form-field>
     </mat-card-content>
     <mat-card-content *ngIf="!ocultarTexto">
@@ -45,8 +57,29 @@
         </div>
     </div>
 </mat-card>
+<mat-card *ngIf="!ocultarArchivo">
+    <mat-card-content >
+        <mat-label class="left-align" >Documento relacionado:</mat-label>
+    </mat-card-content>
+    <div style="display: flex;
+    flex-direction: column;
+    align-items: center;">
+        <input type="file" (change)="onFileSelected($event)">
+        <br>
+        <button (click)="uploadFile()">Subir archivo</button>
+        
+        <div *ngIf="documentLink">
+          <h3>Archivo subido correctamente</h3>
+          <p>Descargar archivo:</p>
+          <a [href]="documentLink" download>
+            <i class="fa fa-file"></i> Archivo
+          </a>
+        </div>
+        <br>
+    </div>
+</mat-card>
 <hr>
 <mat-card class="imagenParent"> 
-    <button mat-raised-button color="primary" (click)="guardar()" class="guardar">Modificar</button>
+    <button mat-raised-button color="primary" (click)="guardar()" class="guardar">{{textoBoton}}</button>
     <br>
 </mat-card>
