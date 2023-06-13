@@ -44,9 +44,7 @@ export class AdministradorComponent {
     }
 
     ngOnInit(): void {
-      if(localStorage.getItem('logged') != 'true'){
-        this.openLoginDialog();
-      } 
+      this.openLoginDialog();
     }
   
     openLoginDialog(): void {
@@ -58,8 +56,6 @@ export class AdministradorComponent {
       dialogRef.afterClosed().subscribe((result: boolean) => {
         if (result) {
           alert("Bienvenido administrador")
-          this.dataSource = new MatTableDataSource<any>(data);
-          this.dataSource.paginator = this.paginator;
         } else {
           this.router.navigate(['/']);
         }

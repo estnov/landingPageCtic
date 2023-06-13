@@ -28,6 +28,9 @@ export class FirebaseService {
   private blogCollection: AngularFirestoreCollection<any>;
   blogs$: Observable<any[]>;
 
+  private adminCollection: AngularFirestoreCollection<any>;
+  admins$: Observable<any[]>;
+
   imageUrls: string[] = [];
 
   constructor(private afs: AngularFirestore, private storage: AngularFireStorage) {
@@ -78,6 +81,11 @@ export class FirebaseService {
         });
       })
     );
+
+    this.adminCollection = afs.collection<any>('admins');
+    this.admins$ = this.adminCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => a.payload.doc.data()))
+    );
   }
 
   getMision(): Observable<any[]> {
@@ -98,6 +106,29 @@ export class FirebaseService {
 
   getServicios(): Observable<any[]> { 
     return this.servicios$;
+  }
+
+  private getAdmins(): Observable<any[]> {
+    return this.admins$;
+  }
+
+  loggin(username: string, password: string): Observable<any> {
+    return new Observable<any>(observer => {
+      this.getAdmins().subscribe(admins => {
+        let token = btoa(username + ':' + password);
+        
+        const admin = admins.find(admin => admin.token === token);
+
+        if (admin) {
+          
+          observer.next(admin);
+
+        } else {
+          observer.error('Credenciales incorrectas');
+        }
+        observer.complete();
+      });
+    });
   }
 
   getBlogs(): Observable<any[]> {

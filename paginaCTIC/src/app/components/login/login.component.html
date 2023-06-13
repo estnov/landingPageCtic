@@ -1,4 +1,10 @@
 <form (ngSubmit)="submitForm()">
+  <mat-card>
+    <mat-card-title>Error de autenticación</mat-card-title>
+    <mat-card-content>
+      <mat-error *ngIf="hide">Combinación usuario contraseña incorrecta</mat-error>
+    </mat-card-content>
+  </mat-card>
   <mat-form-field>
     <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
   </mat-form-field>
