@@ -22,13 +22,11 @@ export class LoginComponent {
         console.log("Bienvenido administrador")
         this.dialogRef.close(true);
       } 
-      
-      if(res.token != btoa(this.username + ':' + this.password)) {
-        alert("Usuario o contraseña incorrectos")
-        this.hide = true;
-
-      }
-    })
+    },
+    error => {
+      this.hide = true;
+    }
+    )
 
     /*if (this.username === 'root' && this.password === 'root') {
       console.log(btoa(this.username + ':' + this.password));

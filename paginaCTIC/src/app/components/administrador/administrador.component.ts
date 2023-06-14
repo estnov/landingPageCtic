@@ -72,7 +72,7 @@ export class AdministradorComponent {
   
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
-        window.location.reload();    
+        //window.location.reload();    
       });
     }
 
