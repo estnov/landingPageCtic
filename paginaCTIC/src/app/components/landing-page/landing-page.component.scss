@@ -20,6 +20,23 @@
     width: 100%;
     overflow: hidden;
   }
+
+  .lista .lista3 li{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    margin-right: 10px;
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: right;
+  }
+
+  .lista .lista3 li a{
+    text-decoration: none;
+    color: #000;
+  }
   
   .slider2 {
     display: flex;
@@ -51,10 +68,18 @@
     font-size: 16px;
     line-height: 1.5;
   }
+  .card .mat-card{
+    font-size: 16px;
+    line-height: 1.5;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin: 20px 0;
+  }
 /*------*/  
   .topnav {
     display: flex;
     align-items: center;
+
   }
 
   .navbar-right{
