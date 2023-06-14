@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-login',
@@ -10,17 +11,32 @@ export class LoginComponent {
   username: string='';
   password: string='';
 
-  constructor(private dialogRef: MatDialogRef<LoginComponent>) {}
+  public hide: boolean = false;
+
+  constructor(private dialogRef: MatDialogRef<LoginComponent>, private afs: FirebaseService) {}
 
   submitForm(): void {
-    console.log(this.username);
-    console.log(this.password);
-    if (this.username === 'root' && this.password === 'root') {
-      localStorage.setItem('logged', 'true');
+    this.afs.loggin(this.username, this.password).subscribe((res: any) => {
+      console.log(res)
+      if(res){
+        console.log("Bienvenido administrador")
+        this.dialogRef.close(true);
+      } 
+      
+      if(res.token != btoa(this.username + ':' + this.password)) {
+        alert("Usuario o contraseña incorrectos")
+        this.hide = true;
+
+      }
+    })
+
+    /*if (this.username === 'root' && this.password === 'root') {
+      console.log(btoa(this.username + ':' + this.password));
+      
       this.dialogRef.close(true); 
 
     } else {
       alert('Invalid username or password');
-    }
+    }*/
   }
 }
