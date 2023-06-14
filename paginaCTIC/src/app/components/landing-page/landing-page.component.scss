@@ -15,6 +15,148 @@
     align-items: center;
 
   }
+
+  .topnav {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-right{
+    float:right!important;
+    margin-right:-15px;
+  }
+  .navbar-right~.navbar-right{
+    margin-right:0;
+  }
+  .navbar-default{
+    background-color:#f8f8f8;
+    border-color:#e7e7e7
+  }
+
+  .lista ,.lista li , .lista li:last-child , .navbar-header{
+    display: flex;
+    margin-right: 1px;
+    margin-right: 0;
+    margin-right: auto;
+  }
+
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    width: fit-content;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .card {
+    width: 300px;
+    margin-right: 20px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos adicionales para el diseño del slider */
+  
+  .slider-container {
+    margin: 20px 0;
+  }
+  
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+
+
+/* Estilos del pie de página */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 0 0 33.33%;
+  margin-bottom: 40px;
+}
+
+.footer-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.social-media li {
+  margin-right: 10px;
+}
+
+.social-media li a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #555;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.footer-bottom p {
+  margin-bottom: 0;
+}
+
+/* Iconos de redes sociales (Font Awesome) */
+.fa {
+  font-size: inherit;
+}
+
+
+  .navbar-collapse {
+    margin-left: auto;
+  }
+  
+  .navbar-nav > li {
+    margin-left: 10px;
+  }
+  
+  
   .bodies{
     width: 100%;
     background-color: rgb(254, 255, 248);
@@ -140,7 +282,7 @@ ul {
 .contact-form form button,
 .contact-form form input,
 .contact-form form textarea {
-    width: 100%;
+    width: 90%;
     padding: .7em;
     border: none;
     background: none;
@@ -154,6 +296,7 @@ ul {
     text-transform: uppercase;
     padding: 1em;
 }
+
 
 .contact-form form button:hover,
 .contact-form form button:focus {
@@ -376,7 +519,7 @@ h6 {
 }
 
 .content-section-a {
-    padding: 50px 0;
+    padding: 45px 0;
     background-color: #f8f8f8;
 }
 
@@ -413,6 +556,7 @@ h6 {
   display:block;
   max-width:350px;
   height:auto;
+  border: 2px solid #000;
   border-radius: 10px 20px 15px 5px;
 }
 
