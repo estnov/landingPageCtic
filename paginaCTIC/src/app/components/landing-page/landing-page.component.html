@@ -1,7 +1,7 @@
 <div class="bodies">
   <div class="menu">
     <header>
-          <a href="#inicio" class="menu2" ><img src="assets/images/Logo.png" alt="Logo de la empresa" style="width: 100px;"></a>
+          <a href="#inicio" class="menu2" ><img src="assets/images/Logo izq.png" alt="Logo de la empresa" style="width: 100px;"></a>
           <a href="#ctic" class="menu2">CTIC</a>
           <a href="#servicios" class="menu2">Servicios</a>
           <a href="blog" class="menu2">Blog</a>
@@ -9,97 +9,83 @@
     </header>
   </div>
 <body>
+
+
+  <div class="slider" id="inicio">
+    <ngx-slick-carousel 
+      class="carrusel"
+      [config]="slideConfig"
+      #slickModal="slick-carousel"
+      >
+      <div ngxSlickItem *ngFor="let imagen of imageUrls" class="bloqueHeader">
+        <img src="{{imagen}}" alt="" />
+      </div>
+    </ngx-slick-carousel>
+  </div>
   
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion mision y vision-->
       <!-------------------------------------------------------------------------------------------------------------------------->
-      <div class="slider" id="inicio">
-        <ngx-slick-carousel 
-          class="carrusel"
-          [config]="slideConfig"
-          #slickModal="slick-carousel"
-          >
-          <div ngxSlickItem *ngFor="let imagen of imageUrls" class="bloqueHeader">
-            <img src="{{imagen}}" alt="" />
-          </div>
-        </ngx-slick-carousel>
-      </div>
-      
+
       <br>
-    
-      <mat-grid-list class="gac" cols="4" rowHeight="350px" gutterSize="0.5px">
-        <mat-grid-tile>
-          <div class="bloqueCircular">
-            <img src="{{imagenMision}}" />
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <mat-card  class="contenido">
-            <mat-card-title>MISIÓN</mat-card-title>
-            <mat-card-content>
-               {{mision}}
-            </mat-card-content>
-          </mat-card>
-        </mat-grid-tile>
-      
-          <mat-grid-tile>
-            <mat-card class="contenido">
-              <mat-card-title >VISIÓN</mat-card-title>
-              <mat-card-content>
-                 {{visiones}}
-              </mat-card-content>
-            </mat-card>
-          </mat-grid-tile>
-          <mat-grid-tile >
-            <div class="bloqueCircular">
-              <img  src="{{imagenVision}}" />
+      <br>
+      <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">MISION</h2>
+                    <p class="lead">{{mision}}</p>
+                </div>
+                <div class="col-lg-5 col-sm-6">
+                    <img class="img-responsive" src="{{imagenMision}}" alt="">
+                </div>
             </div>
-          </mat-grid-tile>
-        </mat-grid-list>
-  
-        <br>
+        </div>
+    </div>
+
+    <br>
+      <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <img class="img-responsive" src="{{imagenVision}}" alt="">
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                  <hr class="section-heading-spacer">
+                  <div class="clearfix"></div>
+                  <h2 class="section-heading">VISION</h2>
+                  <p class="lead">{{visiones}}</p>
+              </div>
+            </div>
+        </div>
+    </div>
   
         
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion CTIC-->
       <!-------------------------------------------------------------------------------------------------------------------------->
-        <div id="ctic" class="slider">      
-          <mat-grid-list cols="2" rowHeight="400px" gutterSize="35px">
-            <mat-grid-tile>
-              <div class="bloqueRectangular">
-                <img src="{{imagenDescripcion}}" />
-              </div>
-            </mat-grid-tile>
-            <mat-grid-tile>
-              <mat-card style="background-color: white;">
-                <mat-card-title>¿Qué es CTIC?</mat-card-title>
-                <mat-card-content>
-                   {{descripcion}}
-                </mat-card-content>
-              </mat-card>
-            </mat-grid-tile>
-          </mat-grid-list>
-          <br>
-          <mat-card-title>
-            Equipos:
-          </mat-card-title>
-          <mat-grid-list cols="2" gutterSize="30px" >
-            <mat-grid-tile *ngFor="let equipo of equipos" [style.flex]="'1 0 auto'">
-              <mat-card class="equipos-card">
-                <img mat-card-lg-image src={{equipo.imagen}}>
-                <mat-card-header>
-                  <mat-card-title-group>
-                    <mat-card-title>{{equipo.titulo}}</mat-card-title>
-                    <mat-card-subtitle>{{equipo.cargos}}</mat-card-subtitle>
-                  </mat-card-title-group>
-                </mat-card-header>
-                <mat-card-content>
-                  {{equipo.descripcion}}
-                </mat-card-content>
-              </mat-card>
-            </mat-grid-tile>
-          </mat-grid-list>
+        
+      <br>
+      <br>
+      <div class="content-section-a">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">¿Qué es CTIC?</h2>
+                    <p class="lead">{{descripcion}}</p>
+                </div>
+                <div class="col-lg-5 col-sm-6">
+                    <img class="img-responsive" src="{{imagenDescripcion}}" alt="">
+                </div>
+            </div>
         </div>
+    </div>
+
+      
   
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion de Servicios-->
@@ -112,23 +98,23 @@
         <mat-expansion-panel *ngFor="let servicios of servicios" hideToggle>
           <mat-expansion-panel-header style="height: auto; margin: 10px">
             <mat-panel-title>
-              {{servicios.titulo}}
+              {{servicios.data.titulo}}
             </mat-panel-title>
             <mat-panel-description style="margin-left: auto;">
               <mat-icon>settings_applications</mat-icon>
-                {{servicios.tecnologias}}
+                {{servicios.data.tecnologias}}
             </mat-panel-description>
           </mat-expansion-panel-header>
           <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title-group>
-                <mat-card-subtitle>{{servicios.tecnologias}}</mat-card-subtitle>
-                <mat-card-title>{{servicios.titulo}}</mat-card-title>
-                <img mat-card-lg-image src="{{servicios.imagen}}" > 
+                <mat-card-subtitle>{{servicios.data.tecnologias}}</mat-card-subtitle>
+                <mat-card-title>{{servicios.data.titulo}}</mat-card-title>
+                <img mat-card-lg-image src="{{servicios.data.imagen}}" > 
               </mat-card-title-group>
             </mat-card-header>
             <mat-card-content>
-              <p>{{ servicios.descripcion }}</p>
+              <p>{{ servicios.data.descripcion }}</p>
               <mat-divider></mat-divider>
             </mat-card-content>
             <mat-card-actions style="display: flex; justify-content: center;">
@@ -155,13 +141,13 @@
       <!---->
       <hr>
       <div id="blog" class="blog">
-        <mat-grid-list cols="2" gutterSize="30px" >
+        <mat-grid-list cols="3" gutterSize="30px" >
           <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'1 0 auto'">
             <mat-card class="equipos-card">
-              <img mat-card-lg-image src={{blog.imagen}}>
+              <img mat-card-lg-image src={{blog.data.imagen}}>
               <mat-card-header>
                 <mat-card-title-group>
-                  <mat-card-title>{{blog.titulo}}</mat-card-title>
+                  <mat-card-title>{{blog.data.titulo}}</mat-card-title>
                  <!-- <mat-card-subtitle>{{blog.texto}}</mat-card-subtitle>-->
                 </mat-card-title-group>
               </mat-card-header>
@@ -230,3 +216,4 @@
       </div>
 </body>
 </div>
+
