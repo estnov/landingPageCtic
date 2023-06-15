@@ -54,8 +54,6 @@
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion mision y vision-->
       <!-------------------------------------------------------------------------------------------------------------------------->
-
-      <br>
       <div class="content-section-a">
         <div class="container">
             <div class="row">
@@ -72,7 +70,6 @@
         </div>
     </div>
 
-    <br>
       <div class="content-section-a">
         <div class="container">
             <div class="row">
@@ -117,7 +114,7 @@
     <div class="slider-container">
       <div class="slider2">
         <div class="card" *ngFor="let equipo of equipos">
-          <mat-card class="equipos-card">
+          <mat-card class="equipos-card2">
             <img mat-card-lg-image src={{equipo.data.imagen}}>
             <mat-card-header>
               <mat-card-title-group>
@@ -138,7 +135,9 @@
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion de Servicios-->
       <!-------------------------------------------------------------------------------------------------------------------------->
-      <hr>
+      <br>
+      <br>
+      <br>
       <div id="servicios" class="contenido">
         <mat-card-title>
           Servicios:
@@ -187,10 +186,12 @@
       <!--Seccion de Blog-->
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!---->
-      <hr>
+      <br>
+      <br>
+      <br>
       <div id="blog" class="blog">
         <mat-grid-list cols="3" gutterSize="30px" >
-          <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'1 0 auto'">
+          <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'4'">
             <mat-card class="equipos-card">
               <img mat-card-lg-image src={{blog.data.imagen}}>
               <mat-card-header>
@@ -216,6 +217,13 @@
   
       <br>
       <br>
+        
+</body>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
         <div class="content" id="contactanos">
           <div class="contact-wrapper animated bounceInUp">
               <div class="contact-form">
@@ -260,36 +268,11 @@
                   <p>centrosur.gob.ec</p>
               </div>
           </div>
-      
-      </div>
-</body>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>About Us</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus orci sed lectus fringilla, sed lobortis purus ultrices.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <ul>
-          <li>Email: info@example.com</li>
-          <li>Phone: +1 123 456 7890</li>
-          <li>Address: 123 Main St, City, Country</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <ul class="social-media">
-          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2023 Your Company. All rights reserved.</p>
+      <p>&copy; 2023 CTIC. All rights reserved.</p>
     </div>
   </div>
 </footer>
