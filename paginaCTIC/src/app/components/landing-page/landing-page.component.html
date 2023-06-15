@@ -54,6 +54,8 @@
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion mision y vision-->
       <!-------------------------------------------------------------------------------------------------------------------------->
+
+      <br>
       <div class="content-section-a">
         <div class="container">
             <div class="row">
@@ -70,6 +72,7 @@
         </div>
     </div>
 
+    <br>
       <div class="content-section-a">
         <div class="container">
             <div class="row">
@@ -114,7 +117,7 @@
     <div class="slider-container">
       <div class="slider2">
         <div class="card" *ngFor="let equipo of equipos">
-          <mat-card class="equipos-card2">
+          <mat-card class="equipos-card">
             <img mat-card-lg-image src={{equipo.data.imagen}}>
             <mat-card-header>
               <mat-card-title-group>
@@ -135,9 +138,7 @@
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion de Servicios-->
       <!-------------------------------------------------------------------------------------------------------------------------->
-      <br>
-      <br>
-      <br>
+      <hr>
       <div id="servicios" class="contenido">
         <mat-card-title>
           Servicios:
@@ -187,11 +188,10 @@
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!---->
       <br>
-      <br>
-      <br>
+      
       <div id="blog" class="blog">
         <mat-grid-list cols="3" gutterSize="30px" >
-          <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'4'">
+          <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'1 0 auto'">
             <mat-card class="equipos-card">
               <img mat-card-lg-image src={{blog.data.imagen}}>
               <mat-card-header>
@@ -200,7 +200,7 @@
                 </mat-card-title-group>
               </mat-card-header>
               <mat-card-content>
-                <button mat-fab extended color="warn" (click)="verBlog(blog)">
+                <button class="botones" mat-fab extended color="warn" (click)="verBlog(blog)">
                   <mat-icon>assignment </mat-icon>
                   LEER EL POST
                 </button>
@@ -214,12 +214,10 @@
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion de contacto-->
       <!-------------------------------------------------------------------------------------------------------------------------->
-  
-      <br>
-      <br>
         
 </body>
 
+<br>
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -278,25 +276,3 @@
 </footer>
 
 </div>
-
-<!--
-  <mat-card-title>
-            Equipos:
-          </mat-card-title>
-          <mat-grid-list cols="2" gutterSize="30px" >
-            <mat-grid-tile *ngFor="let equipo of equipos" [style.flex]="'1 0 auto'">
-              <mat-card class="equipos-card">
-                <img mat-card-lg-image src={{equipo.imagen}}>
-                <mat-card-header>
-                  <mat-card-title-group>
-                    <mat-card-title>{{equipo.titulo}}</mat-card-title>
-                    <mat-card-subtitle>{{equipo.cargos}}</mat-card-subtitle>
-                  </mat-card-title-group>
-                </mat-card-header>
-                <mat-card-content>
-                  {{equipo.descripcion}}
-                </mat-card-content>
-              </mat-card>
-            </mat-grid-tile>
-          </mat-grid-list>
--->

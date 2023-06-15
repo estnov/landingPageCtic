@@ -435,12 +435,18 @@ ul {
   } 
 
 
+  .botones{
+    background-color: #000;
+    height: 28px;
+  }
   .blog {
-    width: 60%;
+    width: 900px;
+    max-width: 900px;
     height: auto;
     margin: 0 auto;
-    justify-content: center;
     text-align: justify;
+    display: grid;
+    margin: 0 auto;
   }
 
   .row{
