@@ -19,7 +19,8 @@ export class BlogComponent {
   constructor(public dialogRef: MatDialogRef<BlogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,){
       this.titulo = this.data.blog.titulo
-      this.blog = this.data.blog
+      this.blog = this.data.blog.data
+      console.log(this.blog)
   }
 
 }

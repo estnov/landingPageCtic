@@ -1,9 +1,26 @@
 <body>
     <div>
-        <mat-card>
-            <mat-card-title>
-                {{titulo}}
+        <mat-card >
+            <mat-card-title style="display: flex; justify-content: center; margin-top:10px">
+                <h2>{{blog.titulo}}</h2>
             </mat-card-title>
+        </mat-card>
+        <mat-card style="display: flex; justify-content: center; margin-top:10px">
+            <mat-card-content style="display: flex; justify-content: center; margin-top:10px">
+                <h6>Autor: {{blog.autor}}</h6>
+            </mat-card-content>
+            <mat-card-content style="display: flex; justify-content: center; margin-top:10px">
+
+                <div style="display: flex; justify-content: center">
+                    <img src="{{blog.imagen}}" alt="imagen" style="width: 70%; height: auto;">
+                </div>
+            </mat-card-content>
+            <br>
+            <mat-card-content >
+                <div >
+                    <p style="margin-left: 15px;">{{blog.texto}}</p>
+                </div>
+            </mat-card-content>
         </mat-card>
     </div>
 </body>
