@@ -68,8 +68,11 @@
                     <h2 class="section-heading">MISION</h2>
                     <p class="lead">{{mision}}</p>
                 </div>
-                <div class="col-lg-5 col-sm-6">
-                    <img class="img-responsive" src="{{imagenMision}}" alt="">
+                <div class="col-lg-5 col-sm-6" style="text-align: right;" >
+                  <div style="float: right;">
+                    <img class="img-responsive" src="{{imagenMision}}" alt="" >
+                  </div>
+                    
                 </div>
             </div>
         </div>
@@ -110,7 +113,10 @@
                     <p class="lead">{{descripcion}}</p>
                 </div>
                 <div class="col-lg-5 col-sm-6">
+                  <div style="float: right;">
                     <img class="img-responsive" src="{{imagenDescripcion}}" alt="">
+                  </div>
+                    
                 </div>
             </div>
         </div>
@@ -142,10 +148,15 @@
       <!--Seccion de Servicios-->
       <!-------------------------------------------------------------------------------------------------------------------------->
       <hr>
-      <div id="servicios" class="contenido">
-        <mat-card-title>
-          Servicios:
-        </mat-card-title>
+      <div >
+
+
+      <mat-card-title style="margin-top: 15px;">
+        Servicios:
+      </mat-card-title>
+      <div style="text-align: center; "> 
+      <div id="servicios" class="contenido" style="float: center;" >
+        
         <mat-expansion-panel *ngFor="let servicios of servicios" hideToggle>
           <mat-expansion-panel-header style="height: auto; margin: 10px">
             <mat-panel-title>
@@ -181,17 +192,20 @@
             </mat-card-actions>
           </mat-card>
         </mat-expansion-panel>
-        <mat-accordion class="example-headers-align">
-          
-        </mat-accordion>  
+      </div>
   
       </div>
+
+    </div>
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion de Blog-->
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!---->
       <br>
-      
+      <hr>
+      <mat-card-title>
+        Blog:
+      </mat-card-title>
       <div id="blog" class="blog">
         <mat-grid-list cols="3" gutterSize="30px" >
           <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'1 0 auto'">

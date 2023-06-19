@@ -491,13 +491,15 @@ ul {
     padding: 0.5px;
   }
   .contenido{
-    text-align: justify;
-    width: 80%;
+    text-align: center;
+    width: 50%;
     display: flexbox;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    float: center;
+    margin-left: 25%;
   }
 
 

@@ -2,12 +2,40 @@
     <div class="servicioBody">
         <mat-card>
             <mat-card-title>
-                {{titulo}}
+                <img src="{{servicio.imagen}}" align="left" width="150px"/>
+                <div style="padding: 30px; margin-left: 15px;">
+                    <h1> Servicio </h1>
+                    <h2>{{servicio.titulo}}</h2>
+                </div>
             </mat-card-title>
             <mat-card-subtitle>
-                {{tecnologias}}
             </mat-card-subtitle>
         </mat-card>
+        <mat-card>
+            <mat-card-title>
+                <h4> Descripción </h4>
+            </mat-card-title>
+            <mat-card-content>
+                <p>{{servicio.descripcion}}</p>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-title>
+                <h4> Descargar documento completo: </h4>    
+            </mat-card-title>
+            <mat-card-content>
+                
+                <a [href]="servicio.documento" download>
+                    <div style="display: flex; text-align: center; justify-content: center;">
+                        <button>
+                            <mat-icon>file_download</mat-icon>
+                        </button>
+                    </div>
+                    
+                  </a>
+            </mat-card-content>
+        </mat-card>
+          
     </div>
 </body>
 
