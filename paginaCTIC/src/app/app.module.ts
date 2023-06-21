@@ -28,6 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ModificarComponent } from './components/modificar/modificar.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { ModificarComponent } from './components/modificar/modificar.component';
     AdministradorComponent,
     LoginComponent,
     LandingPageComponent,
-    ModificarComponent
+    ModificarComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

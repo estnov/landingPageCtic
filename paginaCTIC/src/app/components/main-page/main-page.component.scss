@@ -1,0 +1,83 @@
+body {
+    font-family: Tahoma, sans-serif;
+}
+//Navigation bar styles
+.elementsNavBar{
+    padding: 0;
+    margin-top: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none
+}
+
+.elementsNavBar li:first-child{
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+.elementsNavBar #logo img{
+    width: auto;
+    height: 70px;
+}
+
+.elementsNavBar #options {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+
+.elementsNavBar #options ul{
+    padding: 0;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.elementsNavBar #options ul li{
+    margin: 0px 20px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.elementsNavBar #options ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.elementsNavBar li:last-child{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+
+.resultSearch{
+    position: absolute;
+    background-color: #cfcece;
+    width: max-content;
+}
+
+.resultSearch ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.resultSearch ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    list-style-type: none;
+}

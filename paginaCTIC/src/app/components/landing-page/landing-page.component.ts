@@ -180,6 +180,14 @@ export class LandingPageComponent {
     autoplay: true,
     autoplaySpeed: 5000,
   };
+  slideConfig2 = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    dots:false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
 
   imageObject: Array<object> = [{
     image: 'assets/images/empresa.jpg',

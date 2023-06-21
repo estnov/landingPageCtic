@@ -21,15 +21,25 @@
                   <a href="#ctic">Inicio</a>
               </li>
               <li style="margin-left: 20px;">
+                  <a href="#equipos">Equipos</a>
+              </li>
+              <li style="margin-left: 20px;">
                   <a href="#servicios">Servicios</a>
               </li>
               <li style="margin-left: 20px;">
                 <a href="#blog">Blog</a>
             </li >
-              <li style="margin-left: 20px;">
-                  <a href="#contactanos">Contactanos</a>
-              </li>
+            <li style="margin-left: 20px;">
+                <a href="#contactanos">Contactanos</a>
+            </li>
           </ul>
+      </div>
+      <div style="margin-top: 15px;">
+        <mat-form-field appearance="outline">
+          <mat-label>Buscar</mat-label>
+          <input matInput  />
+          <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
       </div>
   </div>
 </nav>
@@ -55,7 +65,7 @@
     <br>
     <h3>de Implementaciones y competencias</h3>
     <hr class="intro-divider">
-  </div>
+  </div>
   
       <!-------------------------------------------------------------------------------------------------------------------------->
       <!--Seccion mision y vision-->
@@ -114,6 +124,13 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">¿Qué es CTIC?</h2>
                     <p class="lead">{{descripcion}}</p>
+                    <br>
+                    <h3>Valores:</h3>
+                    <ul>
+                      <li>- Proactividad</li>
+                      <li>- Orientación al servicio</li>
+                      <li>- Visión Nacional</li>
+                    </ul>
                 </div>
                 <div class="col-lg-5 col-sm-6">
                   <div style="float: right;">
@@ -125,10 +142,22 @@
         </div>
     </div>
 
+      <!-------------------------------------------------------------------------------------------------------------------------->
+      <!--Seccion equipos-->
+      <!-------------------------------------------------------------------------------------------------------------------------->
+     
+     <br>
+     <hr>
+      <mat-card-title style="margin-top: 15px;" id="equipos">
+        Equipos:
+      </mat-card-title>
 
-    <div class="slider-container">
-      <div class="slider2">
-        <div class="card" *ngFor="let equipo of equipos">
+
+    <ngx-slick-carousel class="carousel" 
+      #slickModal="slick-carousel" 
+      [config]="slideConfig2" >
+        <div class="card" ngxSlickItem *ngFor="let equipo of equipos">
+
           <mat-card class="equipos-card">
             <img mat-card-lg-image src={{equipo.data.imagen}}>
             <mat-card-header>
@@ -141,9 +170,9 @@
               {{equipo.data.descripcion}}
             </mat-card-content>
           </mat-card>
+          
         </div>
-      </div>
-    </div>
+    </ngx-slick-carousel>
     
       
   

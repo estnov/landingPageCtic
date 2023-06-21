@@ -19,7 +19,7 @@
     position: absolute;
     top: 160px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
   }
 
   .overlay h1{
@@ -28,6 +28,7 @@
 
   .overlay h3{
     font-size: 30px;
+    margin-left: 15px;
   }
 
   .intro-divider {
@@ -162,8 +163,9 @@
 /* Estilos del pie de página */
 .footer {
   background-color: #333;
-  color: #fff;
-  padding: 40px 0;
+    color: #fff;
+    padding: 40px 0;
+    width: 110%;
 }
 
 .footer-content {
@@ -239,12 +241,12 @@
   
   
   .bodies{
-    width: 100%;
+    width: 90%;
     background-color: rgb(254, 255, 248);
   }
 
   body {
-    width: 100%;
+    width: 80%;
     background-color: rgb(254, 255, 248);
   }
 
@@ -492,7 +494,6 @@ ul {
     margin: 0 auto;
     justify-content: center;
     text-align: justify;
-    max-width: 4000px;
   }
 
   .button{
