@@ -5,9 +5,10 @@
     <nav role="navigation">
         <ul class="elementsNavBar" >
             <li id="logo">
-                <a href="#"><img src="assets/images/Logo izq.png" alt="Logo de la empresa" ></a>
+                <a href="#" class="imagenLogo"><img src="assets/images/Logo izq.png" alt="Logo de la empresa" ></a>
             </li>
-            <li id="options" >
+            <!-- Opciones para web-->
+            <li id="options">
                 <ul>
                     <li>
                         <a href="#ctic">Inicio</a>
@@ -26,29 +27,48 @@
                 </li>
                 </ul>
             </li>
+            <!-- Opciones para movil-->
+            <li id="optionsMovil">
+                <div class="showOptions">
+                    <mat-icon>menu</mat-icon>
+
+                    <ul>
+                        <li>
+                            <a href="#ctic">Inicio</a>
+                        </li>
+                        <li >
+                            <a href="#equipos">Equipos</a>
+                        </li>
+                        <li >
+                            <a href="#servicios">Servicios</a>
+                        </li>
+                        <li >
+                            <a href="#blog">Blog</a>
+                        </li >
+                        <li >
+                            <a href="#contactanos">Contactanos</a>
+                        </li>
+                    </ul>
+                </div>
+                
+
             <li>
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="searchBox">
                 <mat-label>Buscar</mat-label>
-                <input matInput  />
+                <input matInput (input)="search()" (click)="searching()"  [(ngModel)]="searchKeyword"/>
                 <mat-icon matPrefix>search</mat-icon>
             </mat-form-field>
             <div class="resultSearch" *ngIf="hideBuscando">
-                <ul>
-                    <li>
-                        <a href="#ctic">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="#ctic">Inicio</a>
-                        
-                    </li>
-                    <li>
-                        <a href="#ctic">Inicio</a>
-                        
-                    </li>
-                    <li>
-                        <a href="#ctic">Inicio</a>
-                        
-                    </li>
+                <ul >
+                    <div *ngFor="let res of searchResults; let i=index">
+                        <li class="searchRes">
+                            <a href="#ctic">{{res.data.titulo}}</a>
+                            
+                        </li>
+                        <hr>
+                    </div>
+                    
+                    
                 </ul>
             </div>
             </li>

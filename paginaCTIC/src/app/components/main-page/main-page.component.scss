@@ -15,7 +15,6 @@ body {
 
 .elementsNavBar li:first-child{
     margin-right: auto;
-    margin-left: 10px;
 }
 
 .elementsNavBar #logo img{
@@ -28,7 +27,6 @@ body {
     padding: 0;
     margin: 0;
 }
-
 
 .elementsNavBar #options ul{
     padding: 0;
@@ -65,13 +63,16 @@ body {
 
 .resultSearch{
     position: absolute;
-    background-color: #cfcece;
+    background-color: #ebe8e8;
     width: max-content;
+    text-align: left;
+    padding-right: 30px;
 }
 
 .resultSearch ul{
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .resultSearch ul li{
@@ -81,3 +82,96 @@ body {
     align-items: left;
     list-style-type: none;
 }
+
+.searchRes{
+    width: 150px;
+    margin-top: 10px;
+    border-radius: 16px;
+    text-decoration: none;
+}
+.searchRes a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#optionsMovil{
+    display: none;
+}
+
+#options{
+    display: block; 
+}
+
+.showOptions{
+    
+}
+
+.showOptions ul{
+    display: none;
+}
+
+.showOptions:hover {
+    background-color: #ebe8e8;
+    cursor: pointer;
+}
+
+.showOptions:hover ul{
+    display: block;
+    cursor: pointer;
+    position: absolute;
+
+}
+
+.showOptions:hover ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    list-style-type: none;
+}
+
+.showOptions:hover ul li a{
+    
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.imagenLogo{
+    margin-left: 10px;
+}
+
+// Seccion de responsive
+@media (max-width: 1040px) {
+    #optionsMovil {
+      display: block; 
+    }
+
+    .elementsNavBar #logo img{
+        width: auto;
+        height: 50px;
+    }
+    
+    #options {
+      display: none!important; 
+    }
+
+    .searchBox{
+        width: 180px;
+    }
+
+    .resultSearch{
+        padding-right: 10px;
+    }
+
+    .searchRes{
+        width: 120px;
+    }
+  }

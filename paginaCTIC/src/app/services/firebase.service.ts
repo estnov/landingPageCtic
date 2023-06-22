@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, QuerySnapshot } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { Observable  } from 'rxjs';
+import { Observable, combineLatest  } from 'rxjs';
 import {map} from 'rxjs/operators'
 import { collection, doc, setDoc } from "firebase/firestore";
 
@@ -235,5 +235,43 @@ export class FirebaseService {
       });
     });
   }
+
+  searchByKeyword(keyword: string): Observable<any[]> {
+
+    return new Observable<any[]>(observer => {
+      const result: any[] = [];
+  
+      this.getEquipos().subscribe(equipos => {
+        equipos.forEach(equipo => {
+          if (equipo.data.titulo.toLowerCase().includes(keyword.toLowerCase())) {
+            result.push(equipo);
+          }
+        });
+  
+        this.getServicios().subscribe(servicios => {
+          servicios.forEach(servicio => {
+            if (servicio.data.titulo.toLowerCase().includes(keyword.toLowerCase())) {
+              result.push(servicio);
+            }
+          });
+  
+          this.getBlogs().subscribe(blogs => {
+            blogs.forEach(blog => {
+              if (blog.data.titulo.toLowerCase().includes(keyword.toLowerCase())) {
+                result.push(blog);
+              }
+            });
+  
+            observer.next(result);
+            observer.complete();
+          });
+        });
+      });
+    });
+
+    
+    
+  }
+
 
 }
