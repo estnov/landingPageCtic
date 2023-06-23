@@ -1,6 +1,8 @@
 body {
     font-family: Tahoma, sans-serif;
 }
+
+
 //Navigation bar styles
 .elementsNavBar{
     padding: 0;
@@ -66,13 +68,18 @@ body {
     background-color: #ebe8e8;
     width: max-content;
     text-align: left;
-    padding-right: 30px;
+    padding-right: 50px;
+    z-index: 1;
 }
 
 .resultSearch ul{
     display: flex;
     flex-direction: column;
     text-align: left;
+    position: absolute;
+    background-color: #ebe8e8;
+    padding-right: 50px;
+    z-index: 1;
 }
 
 .resultSearch ul li{
@@ -110,6 +117,9 @@ body {
 
 .showOptions ul{
     display: none;
+    background-color: #ebe8e8;
+    z-index: 1;
+
 }
 
 .showOptions:hover {
@@ -148,8 +158,91 @@ body {
     margin-left: 10px;
 }
 
+// Seccion de slider de imagenes
+.slider {
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: justify;
+    margin-top: 0;
+  }
+
+  .bloqueHeader {
+    display: inline-block; 
+    position: relative; 
+    width: 100%; 
+    height: 300px; 
+    overflow: hidden; 
+    opacity: 0.5;
+}
+
+.bloqueHeader img{
+    width: inherit; 
+    height: auto; 
+    object-fit: contain;
+    object-position: 25% 25%; 
+
+}
+
+.overlay {
+    position: absolute;
+    top: 160px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .overlay h1{
+    font-size: 60px;
+  }
+
+  .overlay h3{
+    font-size: 30px;
+    margin-left: 15px;
+  }
+
+  .intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+
+
+  //Seccion mision
+
+
+.container {
+    max-width: 80%;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+  } 
+
+  .container .content{
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .container .imagen img{
+    width: 200px;
+    height: auto;
+    border-radius: 25px;
+  }
+
+
+
+
+
 // Seccion de responsive
 @media (max-width: 1040px) {
+
+    //responsive de la barra de busqueda
+    .resultSearch ul{
+        padding-right: 15px;
+    }
+
+    //responsive de la barra de navegacion
     #optionsMovil {
       display: block; 
     }
@@ -174,4 +267,62 @@ body {
     .searchRes{
         width: 120px;
     }
+
+    //responsive del slider de imagenes
+    .overlay h1{
+        font-size: 50px;
+    }
+
+    .overlay h3{
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+    .intro-divider {
+        width: 400px;
+        border-top: 1px solid #f8f8f8;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .bloqueHeader {
+        display: inline-block; 
+        position: relative; 
+        width: 100%; 
+        height: 200px; 
+        overflow: hidden;
+        opacity: 0.5;
+    }
+
+    .bloqueHeader img{
+        width: inherit;; 
+        height: 200px; 
+        object-fit: cover;
+    }
+
+    //seccion mision
+
+    .container {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+      } 
+    
+      .container .content{
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      .container .imagen{
+        justify-content: center;
+        text-align: center;
+      }
+    
+      .container .imagen img{
+        width: 80%;
+        height: auto; 
+        border-radius: 25px;
+
+      }
+    
+
   }

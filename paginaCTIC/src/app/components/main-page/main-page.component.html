@@ -32,7 +32,7 @@
                 <div class="showOptions">
                     <mat-icon>menu</mat-icon>
 
-                    <ul>
+                    <ul >
                         <li>
                             <a href="#ctic">Inicio</a>
                         </li>
@@ -74,6 +74,45 @@
             </li>
         </ul>
     </nav>
+
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Slider de imágenes -->
+    <!------------------------------------------------------------------------------------------------>
+
+    <div class="slider" id="inicio">
+        <ngx-slick-carousel 
+        [config]="slideConfig"
+        #slickModal="slick-carousel"
+        >
+        <div ngxSlickItem *ngFor="let imagen of imageUrls" class="bloqueHeader">
+            <img src="{{imagen}}" alt="" />
+        </div>
+        </ngx-slick-carousel>
+    </div>
+    <div class="overlay">
+        <h1>Centro Temporal</h1>
+        <br>
+        <h3>de Implementaciones y competencias</h3>
+        <hr class="intro-divider">
+    </div>
+
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Zona mision -->
+    <!------------------------------------------------------------------------------------------------>
+
+
+    <div class="container">
+        <div class="content">
+            <hr>
+            <h2 >MISION</h2>
+            <p >{{mision}}</p>
+        </div>
+        <div class="imagen">
+            <img src="{{imagenMision}}" alt="" >
+        </div>
+    </div>
+
+    
 
 
 </body>
