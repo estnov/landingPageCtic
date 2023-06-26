@@ -19,11 +19,14 @@ export class MainPageComponent {
   public mision: string ='';
   public imagenMision: string ='';
 
-  
+  public vision: string ='';
   public imagenVision: string ='';
 
 
+  public descripcion: string ='';
+  public imagenDescripcion: string ='';
 
+  public equipos: any[] = [];
 
   //Configuradores del slider de imagenes
   slideConfig = {
@@ -46,10 +49,40 @@ export class MainPageComponent {
       }
     });
 
+    fire.getVision().subscribe(vision => {
+      if (vision.length > 0) {
+        this.vision = vision[0].descripcion;
+      } else {
+        this.vision = " Registrar este campo en la Base de Datos ";
+      }
+    });
+
+    fire.getDescripcion().subscribe(descripcion => {
+      if (descripcion.length > 0) {
+        this.descripcion = descripcion[0].texto;
+      } else {
+        this.descripcion = " Registrar este campo en la Base de Datos ";
+      }
+    });
+
+    fire.getEquipos().subscribe(equipos => {
+      if (equipos.length > 0) {
+        this.equipos = [];
+        for(let i=0; i<equipos.length; i++){
+          this.equipos.push(equipos[i]);
+        }
+        console.log(this.equipos);
+      } else {
+        console.log("No hay equipos registrados");
+      }
+    });
+
+
 
     this.getImagenesHeader(); 
     this.getImagenMision();
     this.getImagenVision();
+    this.getImagenDescripcion();
   }
 
   search() {
@@ -108,6 +141,17 @@ export class MainPageComponent {
       });
     });
   }
+  
+  getImagenDescripcion(){
+    this.fire.getImagenDescripcion().subscribe(listResult => {
+      listResult.items.forEach((itemRef: { getDownloadURL: () => Promise<any>; }) => {
+        itemRef.getDownloadURL().then(imageUrl => {
+          this.imagenDescripcion = imageUrl;
+        });
+      });
+    });
+  }
+
   
 
   @HostListener("document:click")

@@ -207,27 +207,76 @@ body {
   }
 
 
-  //Seccion mision
+  //Seccion mision, vision y descripcion
+
+.containerMovil {
+    display: none;
+}
 
 
-.container {
+.containerWeb {
+    display: block;
     max-width: 80%;
-    margin-top: 25px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: row;
   } 
 
-  .container .content{
+  .containerWeb .content{
     margin-right: 15px;
     margin-left: 15px;
   }
 
-  .container .imagen img{
-    width: 200px;
+  .containerWeb .imagen img{
+    width: 400px;
     height: auto;
     border-radius: 25px;
+  }
+
+  //Seccion de equipos
+
+  .containerEquipos{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .containerEquipos .equipos{
+    display:  grid;
+    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+    column-gap: 3%;
+    row-gap: 50px;
+  }
+
+  .containerEquipos .equipos .equipo {
+    margin: 15px;
+    width: 100%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom: 1px solid #bfbdbd;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  }
+
+  .containerEquipos .equipos .equipo h3 {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+
+  .containerEquipos .equipos .equipo p {
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .containerEquipos .equipos .equipo img{
+    width: inherit;
+    height: auto;
   }
 
 
@@ -299,30 +348,50 @@ body {
         object-fit: cover;
     }
 
-    //seccion mision
+    //seccion mision, vision, descripcion
 
-    .container {
+    .containerWeb{
+        display: none;
+    }
+
+    .containerMovil {
+        display: block;
         max-width: 100%;
         display: flex;
         flex-direction: column;
       } 
     
-      .container .content{
+      .containerMovil .content{
         margin-right: 15px;
         margin-left: 15px;
       }
 
-      .container .imagen{
+      .containerMovil .imagen{
         justify-content: center;
         text-align: center;
       }
     
-      .container .imagen img{
+      .containerMovil .imagen img{
         width: 80%;
         height: auto; 
         border-radius: 25px;
 
       }
+    
+      //responsive de equipos
+      .containerEquipos{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .containerEquipos .equipos{
+        display:  grid;
+        grid-template-columns: 45% 45% ;
+        column-gap: 5%;
+        row-gap: 35px;
+      }
+    
     
 
   }

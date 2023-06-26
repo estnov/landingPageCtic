@@ -101,7 +101,7 @@
     <!------------------------------------------------------------------------------------------------>
 
 
-    <div class="container">
+    <div class="containerWeb">
         <div class="content">
             <hr>
             <h2 >MISION</h2>
@@ -112,7 +112,104 @@
         </div>
     </div>
 
-    
+    <div class="containerMovil">
+        <div class="content">
+            <hr>
+            <h2 >MISION</h2>
+        </div>
+        <div class="imagen">
+            <img src="{{imagenMision}}" alt="" >
+        </div>
+        <div class="content">
+            <p >{{mision}}</p>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Zona vision -->
+    <!------------------------------------------------------------------------------------------------>   
+
+    <div class="containerWeb">
+        
+        <div class="imagen">
+            <img src="{{imagenVision}}" alt="" >
+        </div>
+
+        <div class="content">
+            <hr>
+            <h2 >VISION</h2>
+            <p >{{vision}}</p>
+        </div>
+    </div>
+
+    <div class="containerMovil">
+        <div class="content">
+            <hr>
+            <h2 >VISION</h2>
+        </div>
+        <div class="imagen">
+            <img src="{{imagenVision}}" alt="" >
+        </div>
+        <div class="content">
+            <p >{{vision}}</p>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Descripción CTIC -->
+    <!------------------------------------------------------------------------------------------------>  
+
+    <div class="containerWeb">
+        <div class="content">
+            <hr>
+            <h2 >¿Qué es CTIC? </h2>
+            <p >{{descripcion}}</p>
+            <h3>Valores:</h3>
+                    <ul>
+                      <li> Proactividad</li>
+                      <li> Orientación al servicio</li>
+                      <li> Visión Nacional</li>
+                    </ul>
+        </div>
+        <div class="imagen">
+            <img src="{{imagenDescripcion}}" alt="" >
+        </div>
+    </div>
+
+    <div class="containerMovil">
+        <div class="content">
+            <hr>
+            <h2 >¿Qué es CTIC? </h2>
+        </div>
+        <div class="imagen">
+            <img src="{{imagenDescripcion}}" alt="" >
+        </div>
+        <div class="content">
+            <p >{{descripcion}}</p>
+            <h3>Valores:</h3>
+                    <ul>
+                      <li> Proactividad</li>
+                      <li> Orientación al servicio</li>
+                      <li> Visión Nacional</li>
+                    </ul>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Zona de equipos -->
+    <!------------------------------------------------------------------------------------------------>
+
+    <div class="containerEquipos">
+        <hr>
+        <h2 id="equipos">Equipos</h2>
+        <div class="equipos">
+            <div class="equipo" *ngFor="let equipo of equipos">
+                <img src="{{equipo.data.imagen}}" alt="" >
+                <h3>{{equipo.data.titulo}}</h3>
+                <p>{{equipo.data.descripcion}}</p>
+            </div>
+        </div>
+    </div>
 
 
 </body>
