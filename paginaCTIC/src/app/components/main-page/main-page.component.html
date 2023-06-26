@@ -211,5 +211,162 @@
         </div>
     </div>
 
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Zona de servicios -->
+    <!------------------------------------------------------------------------------------------------>
+    <div class="containerServicios">
+        <hr>
+        <h2 id="servicios">Servicios</h2>
+        <div style="text-align: center; "> 
+            <div id="servicios" class="contenido" style="float: center;" >
+            <mat-expansion-panel *ngFor="let servicios of servicios" hideToggle>
+                <mat-expansion-panel-header style="height: auto; margin: 10px">
+                <mat-panel-title>
+                    {{servicios.data.titulo}}
+                </mat-panel-title>
+                <mat-panel-description style="margin-left: auto;  text-align: left;">
+                    <div style="margin-right: auto;">
+                        <mat-icon style="margin-right: 10px;">computer</mat-icon>
+                        {{servicios.data.tecnologias}}
+                    </div>
+                    
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-card>
+                <mat-card-header>
+                    <mat-card-title-group>
+                    <mat-card-subtitle>{{servicios.data.tecnologias}}</mat-card-subtitle>
+                    <mat-card-title>{{servicios.data.titulo}}</mat-card-title>
+                    <img mat-card-lg-image src="{{servicios.data.imagen}}" > 
+                    </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{ servicios.data.descripcion }}</p>
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <mat-card-actions style="display: flex; justify-content: center;">
+                    <button mat-fab extended (click)="verServicio(servicios)">
+                    <mat-icon>receipt</mat-icon>
+                    Ver Documentacion
+                    </button>
+                </mat-card-actions>
+                </mat-card>
+            </mat-expansion-panel>
+            </div>
+        </div>
+    </div>
 
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Zona de Blog o Noticias -->
+    <!------------------------------------------------------------------------------------------------>
+    <div class="containerBlog">
+        <hr>
+        <h2 id="blogs">Blog y noticias</h2>
+
+        <div class="blogs">
+
+            <div class="blog" *ngFor="let blog of blogs">
+                <img src="{{blog.data.imagen}}" alt="" >
+
+                <h3>{{blog.data.titulo}}</h3>
+                <div style="height: 50px;"></div>
+                <div class="button">
+                    <button mat-fab extended color="primary" (click)="verBlog(blog)">
+                        <mat-icon>assignment </mat-icon>
+                        LEER EL POST
+                      </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Zona de Contactanos y footer-->
+    <!------------------------------------------------------------------------------------------------>
+
+    <footer>
+        <div class="containerContactanos">
+            <h2 id="contactanos">Contáctanos</h2>
+            <div class="contactanos">
+                <div class="contacto">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>email</mat-icon>
+                                E-mail
+                            </div>
+                        </mat-label>
+                        <input matInput placeholder="Ex. correo@alguien.com" value="{{correo}}" >
+                    </mat-form-field>                    
+                </div>
+                <div class="contacto">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>account_circle</mat-icon>
+                                Nombre
+                            </div>
+                        </mat-label>
+                        <input matInput placeholder="Ex. Juan Ledesma" value="{{nombre}}">
+                    </mat-form-field>  
+                </div>
+                <div class="contacto">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>phone</mat-icon>
+                                Teléfono
+                            </div>
+                        </mat-label>
+                        <input matInput placeholder="Ex. 0994766755" value="{{telefono}}">
+                    </mat-form-field>  
+                </div>
+                <div class="contacto">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>location_on</mat-icon>
+                                Dirección
+                            </div>
+                        </mat-label>
+                        <input matInput placeholder="Ex. Av. de las Americas" value="{{direccion}}">
+                    </mat-form-field> 
+                </div>
+                
+                <div class="mensaje">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>textsms</mat-icon>
+                                Mensaje
+                            </div>
+                        </mat-label>
+                        <textarea matInput placeholder="Ex. Av. de las Americas" value="{{mensaje}}"> </textarea>
+                    </mat-form-field> 
+                </div>
+            </div>
+            <div>
+                <button mat-fab extended color="primary" >
+                    <mat-icon>assignment </mat-icon>
+                    Enviar
+                  </button>
+            </div>
+        </div>
+
+
+        <div class="containerInformacion">
+            <h2 id="informacion">Para mas información</h2>
+            <p>Centrosur Matriz Cuenca</p>
+            <p> (+593) 96 120 3354</p>
+            <p>Av. Max Uhle y Av. Pumapungo</p>
+            <p>CTIC es un departamento de Centrosur ©</p>
+            <a href="centrosur.gob.ec"> centrosur.gob.ec</a>
+        </div>
+
+        <br>
+        <hr>
+        <h5>© 2023 CTIC. All rights reserved.</h5>
+
+    </footer>
 </body>

@@ -2,6 +2,8 @@ import { Component, HostListener } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { ServicioComponent } from '../servicio/servicio.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-main-page',
@@ -28,6 +30,16 @@ export class MainPageComponent {
 
   public equipos: any[] = [];
 
+  public servicios: any[] = [];
+
+  public blogs: any[] = [];
+
+  public nombre: string = '';
+  public correo: string = '';
+  public telefono: string = '';
+  public direccion: string = '';
+  public mensaje: string = '';
+
   //Configuradores del slider de imagenes
   slideConfig = {
     slidesToShow: 1,
@@ -39,7 +51,8 @@ export class MainPageComponent {
   };
 
 
-  constructor(private router: Router, private fire : FirebaseService, private storage: AngularFireStorage) {
+  constructor(private router: Router, private fire : FirebaseService, private storage: AngularFireStorage, 
+    public dialog: MatDialog) {
 
     fire.getMision().subscribe(mision => {
       if (mision.length > 0) {
@@ -74,6 +87,29 @@ export class MainPageComponent {
         console.log(this.equipos);
       } else {
         console.log("No hay equipos registrados");
+      }
+    });
+
+    fire.getServicios().subscribe(servicios => {
+      if (servicios.length > 0) {
+        this.servicios = [];
+        for(let i=0; i<servicios.length; i++){
+          this.servicios.push(servicios[i]);
+        }
+      } else {
+        console.log("No hay servicios instanciados en la BD");
+      }
+    });
+    
+
+    fire.getBlogs().subscribe(blogs => {
+      if (blogs.length > 0) {
+        this.blogs = [];
+        for(let i=0; i<blogs.length; i++){
+          this.blogs.push(blogs[i]);
+        }
+      } else {
+        console.log("No hay objetos para el blog instanciados en la BD");
       }
     });
 
@@ -150,6 +186,25 @@ export class MainPageComponent {
         });
       });
     });
+  }
+
+  verServicio(servicio: any): void {
+    const dialogRef = this.dialog.open(ServicioComponent, {
+      data: {servicio: servicio},
+      width: "80%",
+      height: "auto"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado el servicio');
+    });
+  }
+
+  verBlog(blog: any): void {
+    const formattedTitle = blog.data.titulo.toLowerCase().replace(/ /g, '-');
+
+    console.log("Se navega a: ", blog.uid,"/", formattedTitle);
+    //this.router.navigate(['/noticia', blog.uid, blog.titulo]);
   }
 
   

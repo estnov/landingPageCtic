@@ -241,6 +241,7 @@ body {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
 
   }
 
@@ -281,8 +282,183 @@ body {
 
 
 
+  //Seccion de servicios
+
+  .containerServicios{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+  .contenido{
+    text-align: center;
+    width: 50%;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    float: center;
+    margin-left: 25%;
+  }
+
+  //Seccion de blog
+  .containerBlog{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+  .containerBlog .blogs{
+    display:  grid;
+    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+    column-gap: 3%;
+    row-gap: 50px;
+  }
+
+  .containerBlog .blogs .blog {
+    margin: 15px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  }
+
+  .containerBlog .blogs .blog h3 {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+
+  .containerBlog .blogs .blog p {
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .containerBlog .blogs .blog img{
+    width: inherit;
+    height: auto;
+  }
+
+  .containerBlog .blogs .blog .button{
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+  }
+
+  .containerBlog .blogs .blog button{
+    width: 150px;
+    height: 50px;
+
+    background-color: #0684cd;
+    border: none;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  //Seccion de footer
+  
+
+  footer{
+    background-color: #afdff5;
+    height: 490px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+  }
 
 
+
+  .containerContactanos{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 50%;
+    background-color: #0684cd;
+    border-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .containerContactanos .contactanos{
+    margin: 15px;
+    display:  grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 5%;
+
+  }
+
+  .mensaje {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .mensaje mat-form-field{
+    width: 100%;
+    height: 100%;
+  }
+
+  .contacto{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contacto .label{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contacto mat-form-field{
+    max-width: 100%; 
+    width: 100%;
+  }
+  
+  .contacto .label mat-icon{
+    margin-right: 5px;
+  }
+
+  .containerInformacion{
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    text-align: right;
+  }
+
+  footer h5{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+  }
+
+  footer h5{
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  footer hr{
+    width: 80%;
+    margin-top: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+
+
+//------------------RESPONSIVE------------------//
 // Seccion de responsive
 @media (max-width: 1040px) {
 
@@ -392,6 +568,80 @@ body {
         row-gap: 35px;
       }
     
-    
+      //responsive de servicios
+      .containerServicios{
+        width: 90%;
+      }
+      
+      .contenido{
+        text-align: center;
+        width: 90%;
+        display: flexbox;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        float: center;
+        margin-left: 5%;
+      }
 
+      //responsive de blog
+      .containerBlog{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .containerBlog .blogs{
+        display:  grid;
+        grid-template-columns: 45% 45% ;
+        column-gap: 5%;
+        row-gap: 35px;
+      }
+    
+      //responsive de footer
+      footer{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        background-color: #afdff5;
+      }
+
+
+      .containerContactanos{
+        position: static;
+        width: 90%;
+        margin-top: 25px;
+      }
+
+      .containerContactanos .contactanos{
+        margin: 15px;
+        display:  grid;
+        grid-template-columns: 90%;
+        column-gap: 5%;
+    
+      }
+
+      .mensaje {
+        grid-row-start: 5;
+        grid-row-end: 8;
+        grid-column-start: 1;
+        grid-column-end: 1;
+      }
+
+      .containerInformacion{
+        position: static;
+        margin-top: 25px;
+        text-align: center;
+      }
+
+      footer hr{
+        width: 90%;
+        margin-top: 20px;
+      }
+
+    
   }
