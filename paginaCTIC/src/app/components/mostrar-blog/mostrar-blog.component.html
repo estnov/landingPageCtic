@@ -1,0 +1,21 @@
+<div id="blog" class="blog">
+    <mat-grid-list cols="3" gutterSize="30px" >
+      <mat-grid-tile *ngFor="let blog of blogs" [style.flex]="'1 0 auto'">
+        <mat-card class="equipos-card">
+          <img mat-card-lg-image src={{blog.data.imagen}}>
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title>{{blog.data.titulo}}</mat-card-title>
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            <button class="botones" mat-fab extended color="warn">
+              <mat-icon>assignment </mat-icon>
+              LEER EL POST
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!------------------------>
+  </div>

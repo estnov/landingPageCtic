@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { ServicioComponent } from '../servicio/servicio.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MostrarBlogComponent } from '../mostrar-blog/mostrar-blog.component';
 
 @Component({
   selector: 'app-main-page',
@@ -212,6 +213,17 @@ export class MainPageComponent {
   @HostListener("document:click")
   clickedOut() {
     this.hideBuscando = false;
+  }
+
+  verBlogs(): void{
+    const dialogRef = this.dialog.open(MostrarBlogComponent, {
+      width: "80%",
+      height: "80%"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Cerrado el blog');
+    });
   }
 
 

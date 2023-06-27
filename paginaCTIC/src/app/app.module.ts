@@ -29,6 +29,7 @@ import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ModificarComponent } from './components/modificar/modificar.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { MostrarBlogComponent } from './components/mostrar-blog/mostrar-blog.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     LoginComponent,
     LandingPageComponent,
     ModificarComponent,
-    MainPageComponent
+    MainPageComponent,
+    MostrarBlogComponent
   ],
   imports: [
     BrowserModule,
