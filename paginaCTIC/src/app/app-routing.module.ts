@@ -9,7 +9,6 @@ import { NoticiaComponent } from './components/noticia/noticia.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'main', component: MainPageComponent },
   { path: 'adminLogin', component: AdministradorComponent },
   { path: 'noticia/:uid/:title', component: NoticiaComponent },
 ];

@@ -187,7 +187,7 @@ export class FirebaseService {
     });
   }
 
-  updateDocument(documentId: string, titulo: string, autor: string, texto: string, imagen: string, cargos:string, descripcion:string, tecnologias:string, documento: string, tipo: string): Observable<any> {
+  updateDocument(documentId: string, titulo: string, autor: string, texto: string, imagen: string, cargos:string, descripcion:string, tecnologias:string, documento: string, tipo: string, tags:string): Observable<any> {
     // Update the document using the Firestore update method
     return  Observable.create((observer:any) => {this.afs.collection(tipo).doc(documentId).update({
       titulo: titulo,
@@ -197,7 +197,8 @@ export class FirebaseService {
       cargos: cargos,
       descripcion: descripcion,
       tecnologias: tecnologias,
-      documento: documento
+      documento: documento,
+      tags: tags
 
     })
     .then(() => {
@@ -212,7 +213,7 @@ export class FirebaseService {
   });
   }
 
-  createDocument(titulo: string, autor: string, texto: string, imagen: string, cargos:string, descripcion:string, tecnologias:string, documento: string, tipo: string): Observable<any> {
+  createDocument(titulo: string, autor: string, texto: string, imagen: string, cargos:string, descripcion:string, tecnologias:string, documento: string, tipo: string, tags: string): Observable<any> {
     return Observable.create((observer:any) => {
       this.afs.collection(tipo).add({
         titulo: titulo,
@@ -222,7 +223,8 @@ export class FirebaseService {
         cargos: cargos,
         descripcion: descripcion,
         tecnologias: tecnologias,
-        documento: documento
+        documento: documento,
+        tags: tags
       })
       .then((docRef) => {
         console.log('Document created successfully. Document ID:', docRef.id);

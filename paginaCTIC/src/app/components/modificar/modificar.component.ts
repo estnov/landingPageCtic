@@ -22,6 +22,7 @@ export class ModificarComponent {
   public uid: string = '';
   public cargos: string = '';
   public tecnologias: string = '';
+  public tags: string = '';
 
   public fileName: string | undefined = '';
 
@@ -31,6 +32,7 @@ export class ModificarComponent {
   public ocultarCargos: boolean = true;
   public ocultarTecnologias: boolean = true;
   public ocultarArchivo: boolean = true;
+  public ocultarTags: boolean = true;
 
   selectedFile: File | undefined;
 
@@ -55,7 +57,7 @@ export class ModificarComponent {
       if (this.tipo == 'blog'){
         this.texto = data.elemento.data.texto;
         this.autor = data.elemento.data.autor;
-        
+        this.tags = data.elemento.data.tags;
       }
       else if (this.tipo == 'equipos'){
         this.cargos = data.elemento.data.cargos;
@@ -75,6 +77,7 @@ export class ModificarComponent {
     if (this.tipo == 'blog'){
       this.ocultarTexto = false;
       this.ocultarAutor = false;
+      this.ocultarTags = false;
     }
     if(this.tipo == 'equipos'){
       this.ocultarDescripcion = false;
@@ -84,6 +87,7 @@ export class ModificarComponent {
       this.ocultarDescripcion = false;
       this.ocultarTecnologias = false;
       this.ocultarArchivo = false;
+
     }
     
   }
@@ -104,15 +108,14 @@ export class ModificarComponent {
   guardar(){
     if (this.creando){
       console.log("creando")
-      this.fire.createDocument(this.titulo, this.autor, this.texto, this.imagen,this.cargos,this.descripcion,this.tecnologias,this.documentLink,this.tipo).subscribe(() => {
+      this.fire.createDocument(this.titulo, this.autor, this.texto, this.imagen,this.cargos,this.descripcion,this.tecnologias,this.documentLink,this.tipo,this.tags).subscribe(() => {
 
         this.dialogRef.close();
       }, (error) => {
         alert("Error al crear el documento");
       });
     } else {
-      this.fire.updateDocument(this.uid, this.titulo, this.autor, this.texto, this.imagen, this.cargos,this.descripcion,this.tecnologias,this.documentLink, this.tipo).subscribe(() => {
-
+      this.fire.updateDocument(this.uid, this.titulo, this.autor, this.texto, this.imagen, this.cargos,this.descripcion,this.tecnologias,this.documentLink, this.tipo, this.tags).subscribe(() => {
         this.dialogRef.close();
       }, (error) => {
         alert("Error al actualizar el documento");

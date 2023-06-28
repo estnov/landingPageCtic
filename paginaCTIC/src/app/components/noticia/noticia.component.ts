@@ -32,6 +32,7 @@ export class NoticiaComponent {
 
     //obtener el id de la url
     let datos = url.split('/');
+    console.log(datos);
     this.uid = url.split('/')[4];
   }
 
@@ -40,9 +41,11 @@ export class NoticiaComponent {
   cargarNoticia(){
     this.fire.getBlogs().subscribe(noticia => {
       if (noticia.length > 0) {
-        if (noticia[0].uid == this.uid) {
-          this.noticia = noticia[0];
-          console.log(this.noticia);
+        for(let i = 0; i < noticia.length; i++){
+          if(noticia[i].uid == this.uid){
+            this.noticia = noticia[i];
+            console.log(this.noticia);
+          }
         }
       }
     });
