@@ -226,7 +226,32 @@ export class MainPageComponent {
       console.log('Cerrado el blog');
     });
   }
+  
+  goToSearchResult(result: any) {
+    console.log(result);
+    if(result.data.tags==""){
+      if(result.data.tecnologias==""){
+        console.log("Es un equipo")
+        this.goToSection('equipos')
+      }
+      else {
+        console.log("Es un servicio")
+        this.goToSection('servicios')
+        
+      }
+    } else{
+      
+      this.verBlog(result);
+      
+    }
+  }
 
+  goToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   
 

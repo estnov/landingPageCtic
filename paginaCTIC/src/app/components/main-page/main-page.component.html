@@ -11,19 +11,19 @@
             <li id="options">
                 <ul>
                     <li>
-                        <a href="#ctic">Inicio</a>
+                        <a (click)="goToSection('inicio')">Inicio</a>
                     </li>
                     <li >
-                        <a href="#equipos">Equipos</a>
+                        <a (click)="goToSection('equipos')">Equipos</a>
                     </li>
                     <li >
-                        <a href="#servicios">Servicios</a>
+                        <a (click)="goToSection('servicios')">Servicios</a>
                     </li>
                     <li >
-                    <a href="#blog">Blog</a>
+                    <a (click)="goToSection('blogs')">Blog</a>
                 </li >
                 <li >
-                    <a href="#contactanos">Contactanos</a>
+                    <a (click)="goToSection('contactanos')">Contactanos</a>
                 </li>
                 </ul>
             </li>
@@ -62,8 +62,7 @@
                 <ul >
                     <div *ngFor="let res of searchResults; let i=index">
                         <li class="searchRes">
-                            <a href="#ctic">{{res.data.titulo}}</a>
-                            
+                            <a (click)="goToSearchResult(res)">{{res.data.titulo}}</a>
                         </li>
                         <hr>
                     </div>

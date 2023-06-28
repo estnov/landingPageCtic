@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'adminLogin', component: AdministradorComponent },
   { path: 'noticia/:uid/:title', component: NoticiaComponent },
+  { path: ':section', component: MainPageComponent }
 ];
 
 @NgModule({
