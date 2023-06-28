@@ -12,6 +12,12 @@ export class NoticiaComponent {
   private uid: string = '';
   public noticia: any;
 
+  public nombre: string = '';
+  public correo: string = '';
+  public telefono: string = '';
+  public direccion: string = '';
+  public mensaje: string = '';
+
   constructor(@Inject(DOCUMENT) private document: Document, private fire: FirebaseService) { 
     this.obtainURL();
     this.cargarNoticia();

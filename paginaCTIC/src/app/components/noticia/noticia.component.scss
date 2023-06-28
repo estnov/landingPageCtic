@@ -1,0 +1,653 @@
+//Navigation bar styles
+.elementsNavBar{
+    padding: 0;
+    margin-top: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none
+}
+
+.elementsNavBar li:first-child{
+    margin-right: auto;
+}
+
+.elementsNavBar #logo img{
+    width: auto;
+    height: 70px;
+}
+
+.elementsNavBar #options {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.elementsNavBar #options ul{
+    padding: 0;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.elementsNavBar #options ul li{
+    margin: 0px 20px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.elementsNavBar #options ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.elementsNavBar li:last-child{
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+
+.resultSearch{
+    position: absolute;
+    background-color: #ebe8e8;
+    width: max-content;
+    text-align: left;
+    padding-right: 50px;
+    z-index: 1;
+}
+
+.resultSearch ul{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    background-color: #ebe8e8;
+    padding-right: 50px;
+    z-index: 1;
+}
+
+.resultSearch ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    list-style-type: none;
+}
+
+.searchRes{
+    width: 150px;
+    margin-top: 10px;
+    border-radius: 16px;
+    text-decoration: none;
+}
+.searchRes a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#optionsMovil{
+    display: none;
+}
+
+#options{
+    display: block; 
+}
+
+.showOptions{
+    
+}
+
+.showOptions ul{
+    display: none;
+    background-color: #ebe8e8;
+    z-index: 1;
+
+}
+
+.showOptions:hover {
+    background-color: #ebe8e8;
+    cursor: pointer;
+}
+
+.showOptions:hover ul{
+    display: block;
+    cursor: pointer;
+    position: absolute;
+
+}
+
+.showOptions:hover ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    list-style-type: none;
+}
+
+.showOptions:hover ul li a{
+    
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.imagenLogo{
+    margin-left: 10px;
+}
+
+// Seccion de slider de imagenes
+.slider {
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: justify;
+    margin-top: 0;
+  }
+
+  .bloqueHeader {
+    display: inline-block; 
+    position: relative; 
+    width: 100%; 
+    height: 300px; 
+    overflow: hidden; 
+    opacity: 0.5;
+}
+
+.bloqueHeader img{
+    width: inherit; 
+    height: auto; 
+    object-fit: contain;
+    object-position: 25% 25%; 
+
+}
+
+.overlay {
+    position: absolute;
+    top: 160px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .overlay h1{
+    font-size: 60px;
+  }
+
+  .overlay h3{
+    font-size: 30px;
+    margin-left: 15px;
+  }
+
+  .intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+
+
+  //Seccion mision, vision y descripcion
+
+.containerMovil {
+    display: none;
+}
+
+
+.containerWeb {
+    display: block;
+    max-width: 80%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+  } 
+
+  .containerWeb .content{
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .containerWeb .imagen img{
+    width: 400px;
+    height: auto;
+    border-radius: 25px;
+  }
+
+  //Seccion de equipos
+
+  .containerEquipos{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+
+  }
+
+  .containerEquipos .equipos{
+    display:  grid;
+    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+    column-gap: 3%;
+    row-gap: 50px;
+  }
+
+  .containerEquipos .equipos .equipo {
+    margin: 15px;
+    width: 100%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom: 1px solid #bfbdbd;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  }
+
+  .containerEquipos .equipos .equipo h3 {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+
+  .containerEquipos .equipos .equipo p {
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .containerEquipos .equipos .equipo img{
+    width: inherit;
+    height: auto;
+  }
+
+
+
+  //Seccion de servicios
+
+  .containerServicios{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+  .contenido{
+    text-align: center;
+    width: 50%;
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    float: center;
+    margin-left: 25%;
+  }
+
+  //Seccion de blog
+  .containerBlog{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+  .containerBlog .blogs{
+    display:  grid;
+    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+    column-gap: 3%;
+    row-gap: 50px;
+  }
+
+  .containerBlog .blogs .blog {
+    margin: 15px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  }
+
+  .containerBlog .blogs .blog h3 {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+
+  .containerBlog .blogs .blog p {
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .containerBlog .blogs .blog img{
+    width: inherit;
+    height: auto;
+  }
+
+  .containerBlog .blogs .blog .button{
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+  }
+
+  .containerBlog .blogs .blog button{
+    width: 150px;
+    height: 50px;
+
+    background-color: #0684cd;
+    border: none;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .containerBlog .verMas{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .containerBlog .verMas p{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  //Seccion de footer
+  
+
+  footer{
+    background-color: #afdff5;
+    height: 490px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+
+  .containerContactanos{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 50%;
+    background-color: #0684cd;
+    border-radius: 25px;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .containerContactanos .contactanos{
+    margin: 15px;
+    display:  grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 5%;
+
+  }
+
+  .mensaje {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .mensaje mat-form-field{
+    width: 100%;
+    height: 100%;
+  }
+
+  .contacto{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contacto .label{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contacto mat-form-field{
+    max-width: 100%; 
+    width: 100%;
+  }
+  
+  .contacto .label mat-icon{
+    margin-right: 5px;
+  }
+
+  .containerInformacion{
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    text-align: right;
+  }
+
+  footer h5{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+  }
+
+  footer h5{
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  footer hr{
+    width: 80%;
+    margin-top: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+
+
+//------------------RESPONSIVE------------------//
+// Seccion de responsive
+@media (max-width: 1040px) {
+
+    //responsive de la barra de busqueda
+    .resultSearch ul{
+        padding-right: 15px;
+    }
+
+    //responsive de la barra de navegacion
+    #optionsMovil {
+      display: block; 
+    }
+
+    .elementsNavBar #logo img{
+        width: auto;
+        height: 50px;
+    }
+    
+    #options {
+      display: none!important; 
+    }
+
+    .searchBox{
+        width: 180px;
+    }
+
+    .resultSearch{
+        padding-right: 10px;
+    }
+
+    .searchRes{
+        width: 120px;
+    }
+
+    //responsive del slider de imagenes
+    .overlay h1{
+        font-size: 50px;
+    }
+
+    .overlay h3{
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+    .intro-divider {
+        width: 400px;
+        border-top: 1px solid #f8f8f8;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .bloqueHeader {
+        display: inline-block; 
+        position: relative; 
+        width: 100%; 
+        height: 200px; 
+        overflow: hidden;
+        opacity: 0.5;
+    }
+
+    .bloqueHeader img{
+        width: inherit;; 
+        height: 200px; 
+        object-fit: cover;
+    }
+
+    //seccion mision, vision, descripcion
+
+    .containerWeb{
+        display: none;
+    }
+
+    .containerMovil {
+        display: block;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+      } 
+    
+      .containerMovil .content{
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      .containerMovil .imagen{
+        justify-content: center;
+        text-align: center;
+      }
+    
+      .containerMovil .imagen img{
+        width: 80%;
+        height: auto; 
+        border-radius: 25px;
+
+      }
+    
+      //responsive de equipos
+      .containerEquipos{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .containerEquipos .equipos{
+        display:  grid;
+        grid-template-columns: 45% 45% ;
+        column-gap: 5%;
+        row-gap: 35px;
+      }
+    
+      //responsive de servicios
+      .containerServicios{
+        width: 90%;
+      }
+      
+      .contenido{
+        text-align: center;
+        width: 90%;
+        display: flexbox;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        float: center;
+        margin-left: 5%;
+      }
+
+      //responsive de blog
+      .containerBlog{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .containerBlog .blogs{
+        display:  grid;
+        grid-template-columns: 45% 45% ;
+        column-gap: 5%;
+        row-gap: 35px;
+      }
+    
+      //responsive de footer
+      footer{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        background-color: #afdff5;
+      }
+
+
+      .containerContactanos{
+        position: static;
+        width: 90%;
+        margin-top: 25px;
+      }
+
+      .containerContactanos .contactanos{
+        margin: 15px;
+        display:  grid;
+        grid-template-columns: 90%;
+        column-gap: 5%;
+    
+      }
+
+      .mensaje {
+        grid-row-start: 5;
+        grid-row-end: 8;
+        grid-column-start: 1;
+        grid-column-end: 1;
+      }
+
+      .containerInformacion{
+        position: static;
+        margin-top: 25px;
+        text-align: center;
+      }
+
+      footer hr{
+        width: 90%;
+        margin-top: 20px;
+      }
+
+    
+  }

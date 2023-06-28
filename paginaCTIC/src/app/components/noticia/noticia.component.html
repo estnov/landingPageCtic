@@ -1,1 +1,168 @@
-<p>noticia works!</p>
+<body>
+
+    <nav role="navigation">
+        <ul class="elementsNavBar" >
+            <li id="logo">
+                <a href="#" class="imagenLogo"><img src="assets/images/Logo izq.png" alt="Logo de la empresa" ></a>
+            </li>
+            <!-- Opciones para web-->
+            <li id="options">
+                <ul>
+                    <li>
+                        <a href="/main">Inicio</a>
+                    </li>
+                    <li >
+                        <a href="/main">Equipos</a>
+                    </li>
+                    <li >
+                        <a href="/main">Servicios</a>
+                    </li>
+                    <li >
+                    <a href="/main">Blog</a>
+                </li >
+                <li >
+                    <a href="/main">Contactanos</a>
+                </li>
+                </ul>
+            </li>
+            <!-- Opciones para movil-->
+            <li id="optionsMovil">
+                <div class="showOptions">
+                    <mat-icon>menu</mat-icon>
+
+                    <ul >
+                        <li>
+                            <a href="/main">Inicio</a>
+                        </li>
+                        <li >
+                            <a href="/main">Equipos</a>
+                        </li>
+                        <li >
+                            <a href="/main">Servicios</a>
+                        </li>
+                        <li >
+                            <a href="/main">Blog</a>
+                        </li >
+                        <li >
+                            <a href="/main">Contactanos</a>
+                        </li>
+                    </ul>
+                </div>
+        </ul>
+    </nav>
+
+
+
+
+    <div>
+        <mat-card >
+            <mat-card-title style="display: flex; justify-content: center; margin-top:10px">
+                <h2>{{noticia.data.titulo}}</h2>
+            </mat-card-title>
+        </mat-card>
+        <mat-card style="display: flex; justify-content: center; margin-top:10px">
+            <mat-card-content style="display: flex; justify-content: center; margin-top:10px">
+                <h6>Autor: {{noticia.data.autor}}</h6>
+            </mat-card-content>
+            <mat-card-content style="display: flex; justify-content: center; margin-top:10px">
+
+                <div style="display: flex; justify-content: center">
+                    <img src="{{noticia.data.imagen}}" alt="imagen" style="width: 70%; height: auto;">
+                </div>
+            </mat-card-content>
+            <br>
+            <mat-card-content >
+                <div >
+                    <p style="margin-left: 15px;">{{noticia.data.texto}}</p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+
+
+    <footer>
+        <div class="containerContactanos">
+            <h2 id="contactanos">Contáctanos</h2>
+            <div class="contactanos">
+                <div class="contacto">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>email</mat-icon>
+                                E-mail
+                            </div>
+                        </mat-label>
+                        <input matInput placeholder="Ex. correo@alguien.com" value="{{correo}}" >
+                    </mat-form-field>                    
+                </div>
+                <div class="contacto">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>account_circle</mat-icon>
+                                Nombre
+                            </div>
+                        </mat-label>
+                        <input matInput placeholder="Ex. Juan Ledesma" value="{{nombre}}">
+                    </mat-form-field>  
+                </div>
+                <div class="contacto">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>phone</mat-icon>
+                                Teléfono
+                            </div>
+                        </mat-label>
+                        <input matInput placeholder="Ex. 0994766755" value="{{telefono}}">
+                    </mat-form-field>  
+                </div>
+                <div class="contacto">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>location_on</mat-icon>
+                                Dirección
+                            </div>
+                        </mat-label>
+                        <input matInput placeholder="Ex. Av. de las Americas" value="{{direccion}}">
+                    </mat-form-field> 
+                </div>
+                
+                <div class="mensaje">
+                    <mat-form-field>
+                        <mat-label >
+                            <div class="label">
+                                <mat-icon>textsms</mat-icon>
+                                Mensaje
+                            </div>
+                        </mat-label>
+                        <textarea matInput placeholder="Ex. Av. de las Americas" value="{{mensaje}}"> </textarea>
+                    </mat-form-field> 
+                </div>
+            </div>
+            <div>
+                <button mat-fab extended color="primary" >
+                    <mat-icon>assignment </mat-icon>
+                    Enviar
+                  </button>
+            </div>
+        </div>
+
+
+        <div class="containerInformacion">
+            <h2 id="informacion">Para mas información</h2>
+            <p>Centrosur Matriz Cuenca</p>
+            <p> (+593) 96 120 3354</p>
+            <p>Av. Max Uhle y Av. Pumapungo</p>
+            <p>CTIC es un departamento de Centrosur ©</p>
+            <a href="centrosur.gob.ec"> centrosur.gob.ec</a>
+        </div>
+
+        <br>
+        <hr>
+        <h5>© 2023 CTIC. All rights reserved.</h5>
+
+    </footer>
+</body>
