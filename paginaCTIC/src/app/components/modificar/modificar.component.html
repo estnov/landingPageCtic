@@ -43,6 +43,12 @@
             <textarea matInput rows="6" [(ngModel)]="texto" name="texto" placeholder="{{texto}}" ></textarea>
         </mat-form-field>
     </mat-card-content>
+    <mat-card-content *ngIf="!ocultarTags">
+        <mat-label class="left-align" >Tags:</mat-label>
+        <mat-form-field>
+            <textarea matInput rows="3" [(ngModel)]="tags" name="tags" placeholder="{{tags}}" ></textarea>
+        </mat-form-field>
+    </mat-card-content>
 </mat-card>
 <mat-card class="imagenParent">
     <mat-card-content >
