@@ -21,6 +21,7 @@ export class NoticiaComponent {
   constructor(@Inject(DOCUMENT) private document: Document, private fire: FirebaseService) { 
     this.obtainURL();
     this.cargarNoticia();
+    this.cargarBlogs();
   }
   oninit(){
     this.obtainURL();
@@ -35,6 +36,8 @@ export class NoticiaComponent {
     this.uid = url.split('/')[4];
   }
 
+  public blogs: any[] = [];
+
   cargarNoticia(){
     this.fire.getBlogs().subscribe(noticia => {
       if (noticia.length > 0) {
@@ -47,5 +50,22 @@ export class NoticiaComponent {
       }
     });
   }
+cargarBlogs(){
+  this.fire.getBlogs().subscribe(blogs => {
+    let maxBlogs = 4;
+    if (blogs.length > 0) {
+      this.blogs = [];
+      for(let i=0; i<blogs.length; i++){
+        this.blogs.push(blogs[i]);
+        if(i==maxBlogs){
+          break;
+        }
+      }
+    } else {
+      console.log("No hay objetos para el blog instanciados en la BD");
+    }
+  });
+}
+  
 
 }
