@@ -104,10 +104,14 @@ export class MainPageComponent {
     
 
     fire.getBlogs().subscribe(blogs => {
+      let maxBlogs = 4;
       if (blogs.length > 0) {
         this.blogs = [];
         for(let i=0; i<blogs.length; i++){
           this.blogs.push(blogs[i]);
+          if(i==maxBlogs){
+            break;
+          }
         }
       } else {
         console.log("No hay objetos para el blog instanciados en la BD");
@@ -204,26 +208,31 @@ export class MainPageComponent {
   verBlog(blog: any): void {
     const formattedTitle = blog.data.titulo.toLowerCase().replace(/ /g, '-');
 
-    console.log("Se navega a: ", blog.uid,"/", formattedTitle);
-    //this.router.navigate(['/noticia', blog.uid, blog.titulo]);
+    //console.log("Se navega a: ", blog.uid,"/", formattedTitle);
+
+    let url = blog.uid + "/" + formattedTitle;
+
+    this.router.navigate(['/noticia', blog.uid, formattedTitle]);
   }
 
   
-
-  @HostListener("document:click")
-  clickedOut() {
-    this.hideBuscando = false;
-  }
-
   verBlogs(): void{
     const dialogRef = this.dialog.open(MostrarBlogComponent, {
-      width: "80%",
+      width: "90%",
       height: "80%"
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Cerrado el blog');
     });
+  }
+
+
+  
+
+  @HostListener("document:click")
+  clickedOut() {
+    this.hideBuscando = false;
   }
 
 

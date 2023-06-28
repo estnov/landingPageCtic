@@ -30,6 +30,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { ModificarComponent } from './components/modificar/modificar.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { MostrarBlogComponent } from './components/mostrar-blog/mostrar-blog.component';
+import { NoticiaComponent } from './components/noticia/noticia.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { MostrarBlogComponent } from './components/mostrar-blog/mostrar-blog.com
     LandingPageComponent,
     ModificarComponent,
     MainPageComponent,
-    MostrarBlogComponent
+    MostrarBlogComponent,
+    NoticiaComponent
   ],
   imports: [
     BrowserModule,

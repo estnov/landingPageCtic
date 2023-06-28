@@ -366,6 +366,17 @@ body {
     cursor: pointer;
   }
 
+  .containerBlog .verMas{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .containerBlog .verMas p{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   //Seccion de footer
   
 

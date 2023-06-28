@@ -261,11 +261,16 @@
     <!------------------------------------------------------------------------------------------------>
     <div class="containerBlog">
         <hr>
+        
         <h2 id="blogs">Blog y noticias</h2>
         <!-- ESTE BOTON REDIRECCIONA A LA VENTANA DONDE SE MUESTRAN TODOS LOS BLOGS  -->
-        <button (click)="verBlogs()">
-            +
-          </button>
+        <div class="verMas">
+            <p>Ver todos: </p>
+            <button mat-icon-button (click)="verBlogs()">
+                <mat-icon>add_circle</mat-icon>
+              </button>
+            
+        </div>
 
         <div class="blogs">
 

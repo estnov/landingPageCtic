@@ -1,8 +1,10 @@
-<div class="blogs">
+<div class="titulo">
+  <h3>Entradas de blog disponibles:</h3>
+</div>
 
+<div class="blogs">
   <div class="blog" *ngFor="let blog of blogs">
       <img src="{{blog.data.imagen}}" alt="" >
-
       <h3>{{blog.data.titulo}}</h3>
       <div style="height: 50px;"></div>
       <div class="button">

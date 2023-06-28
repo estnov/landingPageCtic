@@ -5,12 +5,13 @@ import { AdministradorComponent } from './components/administrador/administrador
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { NoticiaComponent } from './components/noticia/noticia.component';
 
 const routes: Routes = [
-  { path: '', component: LandingPageComponent },
+  { path: '', component: MainPageComponent },
   { path: 'main', component: MainPageComponent },
   { path: 'adminLogin', component: AdministradorComponent },
-  { path: 'noticia/:uid:/titulo', component: BlogComponent },
+  { path: 'noticia/:uid/:title', component: NoticiaComponent },
 ];
 
 @NgModule({
