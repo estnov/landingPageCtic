@@ -274,15 +274,11 @@ export class FirebaseService {
   }
 
   sendEmail(input: any): Observable<any> {
+    //mail.to crear cuento
     let url = "https://mailthis.to/cticcentrosurdespliegue@gmail.com";
-    console.log(input)
 
-    return this.http.post(url, input).pipe(
-      map(response => {
-        return response;
-      })
-    )
+    return this.http.post(url, input)
+
   }
-
 
 }

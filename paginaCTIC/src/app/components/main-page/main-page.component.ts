@@ -291,11 +291,20 @@ export class MainPageComponent {
           console.error('Error sending email:', error);
         }
       )
+      this.correo = ""
+      this.telefono = ""
+      this.direccion = ""
+      this.mensaje = ""
+      this.nombre = ""
     } else{
       alert("Debe completar todos los campos del formulario")
     }
 
     
+  }
+
+  goToGlpi(){
+    window.open('http://172.19.128.78/glpi/index.php?noAUTO=1', "_blank");
   }
 
   

@@ -53,11 +53,17 @@
                 
 
             <li>
-            <mat-form-field appearance="outline" class="searchBox">
-                <mat-label>Buscar</mat-label>
-                <input matInput (input)="search()" (click)="searching()"  [(ngModel)]="searchKeyword"/>
-                <mat-icon matPrefix>search</mat-icon>
-            </mat-form-field>
+            <div class="optionsEnd">
+                <mat-form-field appearance="outline" class="searchBox">
+                    <mat-label>Buscar</mat-label>
+                    <input matInput (input)="search()" (click)="searching()"  [(ngModel)]="searchKeyword"/>
+                    <mat-icon matPrefix>search</mat-icon>
+                </mat-form-field>
+                <button mat-fab color="primary" aria-label="GLPI" (click)="goToGlpi()" >
+                    <mat-icon>account_circle</mat-icon>
+                  </button>
+            </div>
+            
             <div class="resultSearch" *ngIf="hideBuscando">
                 <ul >
                     <div *ngFor="let res of searchResults; let i=index">

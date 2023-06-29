@@ -105,6 +105,17 @@ body {
     font-weight: bold;
 }
 
+.optionsEnd{
+  display: flex;
+  flex-direction: row;
+}
+
+.optionsEnd button{
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+}
+
 #optionsMovil{
     display: none;
 }
