@@ -153,149 +153,15 @@
     margin-left: 10px;
 }
 
-// Seccion de slider de imagenes
-.slider {
-    width: 100%;
-    margin: 0 auto;
-    justify-content: center;
-    text-align: justify;
-    margin-top: 0;
-  }
 
-  .bloqueHeader {
-    display: inline-block; 
-    position: relative; 
-    width: 100%; 
-    height: 300px; 
-    overflow: hidden; 
-    opacity: 0.5;
-}
-
-.bloqueHeader img{
-    width: inherit; 
-    height: auto; 
-    object-fit: contain;
-    object-position: 25% 25%; 
-
-}
-
-.overlay {
-    position: absolute;
-    top: 160px;
-    font-weight: bold;
-    text-align: left;
-  }
-
-  .overlay h1{
-    font-size: 60px;
-  }
-
-  .overlay h3{
-    font-size: 30px;
-    margin-left: 15px;
-  }
-
-  .intro-divider {
-    width: 400px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-  }
-
-
-  //Seccion mision, vision y descripcion
-
-.containerMovil {
-    display: none;
-}
-
-
-.containerWeb {
-    display: block;
-    max-width: 80%;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-  } 
-
-  .containerWeb .content{
-    margin-right: 15px;
-    margin-left: 15px;
-  }
-
-  .containerWeb .imagen img{
-    width: 400px;
-    height: auto;
-    border-radius: 25px;
-  }
-
-  //Seccion de equipos
-
-  .containerEquipos{
-    width: 80%;
+  .pagBlog{
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-
-  }
-
-  .containerEquipos .equipos{
-    display:  grid;
-    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
-    column-gap: 3%;
-    row-gap: 50px;
-  }
-
-  .containerEquipos .equipos .equipo {
-    margin: 15px;
-    width: 100%;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    border-bottom: 1px solid #bfbdbd;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-  }
-
-  .containerEquipos .equipos .equipo h3 {
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-
-  }
-
-  .containerEquipos .equipos .equipo p {
-    padding: 10px;
-    text-align: left;
-    font-size: 12px;
-  }
-
-  .containerEquipos .equipos .equipo img{
-    width: inherit;
-    height: auto;
-  }
-
-
-
-  //Seccion de servicios
-
-  .containerServicios{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-  }
-
-  .contenido{
-    text-align: center;
-    width: 50%;
-    display: flexbox;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    float: center;
-    margin-left: 25%;
+    display: grid;
+    grid-template-columns: 68.5% 28.5% ;
+    column-gap: 5%;
   }
 
   //Seccion de blog
@@ -308,18 +174,20 @@
 
   .containerBlog .blogs{
     display:  grid;
-    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
-    column-gap: 3%;
-    row-gap: 50px;
+    grid-template-columns: 80%;
+    row-gap: 15px;
     
   }
 
   .containerBlog .blogs .blog {
     margin: 15px;
     width: 100%;
-    height: 205px;
-    position: relative;
+    height: auto;
+    display: grid;
+    grid-template-columns: 30% 60%;
+    column-gap: 10%;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
   }
 
   .containerBlog .blogs .blog h3 {
@@ -336,9 +204,10 @@
   }
 
   .containerBlog .blogs .blog img{
-    width: inherit;
-    height: 110px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    padding: 10px;
   }
 
   .containerBlog .blogs .blog .button{
@@ -372,6 +241,12 @@
   .containerBlog .verMas p{
     margin-top: auto;
     margin-bottom: auto;
+  }
+
+  .relacionadas h3{
+    font-size: 14px;
+    font-weight: bold;
+
   }
 
   //Seccion de footer
@@ -501,110 +376,26 @@
         width: 120px;
     }
 
-    //responsive del slider de imagenes
-    .overlay h1{
-        font-size: 50px;
-    }
-
-    .overlay h3{
-        font-size: 15px;
-        margin-left: 10px;
-    }
-
-    .intro-divider {
-        width: 400px;
-        border-top: 1px solid #f8f8f8;
-        border-bottom: 1px solid rgba(0,0,0,0.2);
-    }
-
-    .bloqueHeader {
-        display: inline-block; 
-        position: relative; 
-        width: 100%; 
-        height: 200px; 
-        overflow: hidden;
-        opacity: 0.5;
-    }
-
-    .bloqueHeader img{
-        width: inherit;; 
-        height: 200px; 
-        object-fit: cover;
-    }
-
-    //seccion mision, vision, descripcion
-
-    .containerWeb{
-        display: none;
-    }
-
-    .containerMovil {
-        display: block;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-      } 
-    
-      .containerMovil .content{
-        margin-right: 15px;
-        margin-left: 15px;
-      }
-
-      .containerMovil .imagen{
-        justify-content: center;
-        text-align: center;
-      }
-    
-      .containerMovil .imagen img{
-        width: 80%;
-        height: auto; 
-        border-radius: 25px;
-
-      }
-    
-      //responsive de equipos
-      .containerEquipos{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    
-      .containerEquipos .equipos{
-        display:  grid;
-        grid-template-columns: 45% 45% ;
-        column-gap: 5%;
-        row-gap: 35px;
-      }
-    
-      //responsive de servicios
-      .containerServicios{
-        width: 90%;
-      }
-      
-      .contenido{
-        text-align: center;
-        width: 90%;
-        display: flexbox;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        float: center;
-        margin-left: 5%;
-      }
 
       //responsive de blog
+
+      .pagBlog{
+        grid-template-columns: 100% ;
+        column-gap: 5%;
+        row-gap: 15px;
+      }
+
       .containerBlog{
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 15px;
       }
     
       .containerBlog .blogs{
         display:  grid;
-        grid-template-columns: 45% 45% ;
-        column-gap: 5%;
-        row-gap: 35px;
+        margin-top: 15px;
+        grid-template-columns: 90% ;
       }
     
       //responsive de footer

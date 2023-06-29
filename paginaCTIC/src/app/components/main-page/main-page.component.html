@@ -305,7 +305,7 @@
                                 E-mail
                             </div>
                         </mat-label>
-                        <input matInput placeholder="Ex. correo@alguien.com" value="{{correo}}" >
+                        <input matInput placeholder="Ex. correo@alguien.com" value="{{correo}}" [(ngModel)]="correo">
                     </mat-form-field>                    
                 </div>
                 <div class="contacto">
@@ -316,7 +316,7 @@
                                 Nombre
                             </div>
                         </mat-label>
-                        <input matInput placeholder="Ex. Juan Ledesma" value="{{nombre}}">
+                        <input matInput placeholder="Ex. Juan Ledesma" value="{{nombre}}" [(ngModel)]="nombre">
                     </mat-form-field>  
                 </div>
                 <div class="contacto">
@@ -327,7 +327,7 @@
                                 Teléfono
                             </div>
                         </mat-label>
-                        <input matInput placeholder="Ex. 0994766755" value="{{telefono}}">
+                        <input matInput placeholder="Ex. 0994766755" value="{{telefono}}" [(ngModel)]="telefono">
                     </mat-form-field>  
                 </div>
                 <div class="contacto">
@@ -338,7 +338,7 @@
                                 Dirección
                             </div>
                         </mat-label>
-                        <input matInput placeholder="Ex. Av. de las Americas" value="{{direccion}}">
+                        <input matInput placeholder="Ex. Av. de las Americas" value="{{direccion}}" [(ngModel)]="direccion">
                     </mat-form-field> 
                 </div>
                 
@@ -350,12 +350,12 @@
                                 Mensaje
                             </div>
                         </mat-label>
-                        <textarea matInput placeholder="Ex. Av. de las Americas" value="{{mensaje}}"> </textarea>
+                        <textarea matInput placeholder="Ex. Quisiera mayor información sobre sus servicios" value="{{mensaje}}" [(ngModel)]="mensaje"> </textarea>
                     </mat-form-field> 
                 </div>
             </div>
             <div>
-                <button mat-fab extended color="primary" >
+                <button mat-fab extended color="primary" (click)="sendMail()" >
                     <mat-icon>assignment </mat-icon>
                     Enviar
                   </button>

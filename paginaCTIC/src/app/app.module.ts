@@ -31,6 +31,7 @@ import { ModificarComponent } from './components/modificar/modificar.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { MostrarBlogComponent } from './components/mostrar-blog/mostrar-blog.component';
 import { NoticiaComponent } from './components/noticia/noticia.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { NoticiaComponent } from './components/noticia/noticia.component';
     MatListModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

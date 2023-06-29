@@ -5,6 +5,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import { ServicioComponent } from '../servicio/servicio.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MostrarBlogComponent } from '../mostrar-blog/mostrar-blog.component';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-main-page',
@@ -53,7 +54,8 @@ export class MainPageComponent {
 
 
   constructor(private router: Router, private fire : FirebaseService, private storage: AngularFireStorage, 
-    public dialog: MatDialog) {
+    public dialog: MatDialog, private builder: FormBuilder) {
+
 
     fire.getMision().subscribe(mision => {
       if (mision.length > 0) {
@@ -251,6 +253,49 @@ export class MainPageComponent {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  sendMail(){
+    console.log(this.correo)
+
+    if(this.correo!="" && this.telefono!="" && this.direccion!="" && this.mensaje!=""  && this.nombre!=""){
+      let FormData: FormGroup;
+      
+      let contenido = ""
+      contenido += "El usuario: "+this.nombre +" desea contactarse con soporte\n"
+      contenido += "\nLos datos de contacto son: \n"
+      contenido += this.correo
+      contenido += "\n"
+      contenido += this.telefono
+      contenido += "\n"
+      contenido += this.direccion
+      contenido += "\n\nEl motivo del contacto es: \n"
+      contenido += this.mensaje
+
+      const message = {
+        to: 'cticcentrosurdespliegue@gmail.com',
+        subject: 'CTIC Email',
+        text: 'Mensaje de prueba'
+      };
+
+      this.fire.sendEmail(message).subscribe(response =>{
+          location.href = 'https://mailthis.to/confirm'
+
+          this.correo = ""
+          this.telefono = ""
+          this.direccion = ""
+          this.mensaje = ""
+          this.nombre = ""
+
+        }, error => {
+          console.error('Error sending email:', error);
+        }
+      )
+    } else{
+      alert("Debe completar todos los campos del formulario")
+    }
+
+    
   }
 
   

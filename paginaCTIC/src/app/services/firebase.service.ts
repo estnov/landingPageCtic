@@ -4,6 +4,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Observable, combineLatest  } from 'rxjs';
 import {map} from 'rxjs/operators'
 import { collection, doc, setDoc } from "firebase/firestore";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,7 @@ export class FirebaseService {
 
   imageUrls: string[] = [];
 
-  constructor(private afs: AngularFirestore, private storage: AngularFireStorage) {
+  constructor(private afs: AngularFirestore, private storage: AngularFireStorage, private http: HttpClient) {
     this.misionCollection = afs.collection<any>('mision');
     this.mision$ = this.misionCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => a.payload.doc.data()))
@@ -270,9 +271,17 @@ export class FirebaseService {
         });
       });
     });
+  }
 
-    
-    
+  sendEmail(input: any): Observable<any> {
+    let url = "https://mailthis.to/cticcentrosurdespliegue@gmail.com";
+    console.log(input)
+
+    return this.http.post(url, input).pipe(
+      map(response => {
+        return response;
+      })
+    )
   }
 
 

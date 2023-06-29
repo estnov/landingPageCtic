@@ -9,19 +9,19 @@
             <li id="options">
                 <ul>
                     <li>
-                        <a href="/main">Inicio</a>
+                        <a href="/#inicio">Inicio</a>
                     </li>
                     <li >
-                        <a href="/main">Equipos</a>
+                        <a href="/#equipos">Equipos</a>
                     </li>
                     <li >
-                        <a href="/main">Servicios</a>
+                        <a href="/#servicios">Servicios</a>
                     </li>
                     <li >
-                    <a href="/main">Blog</a>
+                    <a href="/#blogs">Blog</a>
                 </li >
                 <li >
-                    <a href="/main">Contactanos</a>
+                    <a href="/#contactanos">Contactanos</a>
                 </li>
                 </ul>
             </li>
@@ -52,47 +52,55 @@
     </nav>
 
 
+    
 
 
-    <div>
-        <mat-card >
-            <mat-card-title style="display: flex; justify-content: center; margin-top:10px">
+    <div class="pagBlog">
+        <div class="blogPrinc">
+            <div class="tituloPrincipal">
                 <h2>{{noticia.data.titulo}}</h2>
-            </mat-card-title>
-        </mat-card>
-        <mat-card style="display: flex; justify-content: center; margin-top:10px">
-            <mat-card-content style="display: flex; justify-content: center; margin-top:10px">
+            </div>
+            <div class="autor">
                 <h6>Autor: {{noticia.data.autor}}</h6>
-            </mat-card-content>
-            <mat-card-content style="display: flex; justify-content: center; margin-top:10px">
-
-                <div style="display: flex; justify-content: center">
-                    <img src="{{noticia.data.imagen}}" alt="imagen" style="width: 70%; height: auto;">
-                </div>
-            </mat-card-content>
-            <br>
-            <mat-card-content >
-                <div >
-                    <p style="margin-left: 15px;">{{noticia.data.texto}}</p>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-
-    <div class="containerBlog">
-        <div class="blogs">
-
-            <div class="blog" *ngFor="let blog of blogs">
-                <img src="{{blog.data.imagen}}" alt="" >
-                <h3>{{blog.data.titulo}}</h3>
-                <div style="height: 50px;"></div>
+            </div>
+            <div class="imagenPrincipal">
+                <img src="{{noticia.data.imagen}}" alt="imagen" style="width: 100%; height: auto;">
+            </div>
+            <div class="textoPrincipal">
+                <p>{{noticia.data.texto}}</p>
             </div>
 
         </div>
+        <div class="rel">
+
+            <!------------------------------------------------------------------------------------------------------>
+            <!-----------------------------------------Rel---------------------------------------------------------->
+            <!------------------------------------------------------------------------------------------------------>
+
+            <div class="relacionadas">
+                <h3>Noticias relacionadas:</h3>
+            </div>
+
+            <div class="containerBlog">
+                <div class="blogs">
+                    <div class="blog" *ngFor="let blog of blogs" (click)="verBlog(blog)">
+                        <div style="margin-top: auto; margin-bottom: auto; ">
+                            <img src="{{blog.data.imagen}}" alt="" >
+                        </div>
+
+                        <h3>{{blog.data.titulo}}</h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <br>
-    <br>
+    <!------------------------------------------------------------------------------------------------------>
+    <!-----------------------------------------FOOTER------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------>
 
     <footer>
         <div class="containerContactanos">
